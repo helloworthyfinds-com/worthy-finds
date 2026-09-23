@@ -3,113 +3,408 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worthy Finds</title>
+
+  <title>Worthy Finds — Things Worth Finding</title>
+
+  <meta name="description" content="Worthy Finds discovers useful, beautiful and clever products worth knowing about.">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #171717;
+      --muted: #777;
+      --cream: #f7f5f0;
+      --line: #e8e5df;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.5;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
     header {
-      padding: 20px;
-      border-bottom: 1px solid #eeeeee;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      font-size: 28px;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      letter-spacing: -0.8px;
       font-weight: bold;
     }
 
-    .tagline {
-      margin-top: 6px;
-      color: #666666;
-      font-size: 14px;
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      color: #555;
     }
 
-    nav {
-      margin-top: 18px;
+    .nav-links a:hover {
+      color: #000;
     }
 
-    nav a {
-      margin: 0 8px;
-      color: #222222;
-      text-decoration: none;
-      font-size: 14px;
-    }
+    /* HERO */
 
     .hero {
-      padding: 60px 20px;
+      min-height: 78vh;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: #f7f7f7;
+      padding: 70px 24px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 25px;
     }
 
     .hero h1 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-      color: #666666;
-      line-height: 1.6;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(50px, 10vw, 100px);
+      line-height: 0.95;
+      letter-spacing: -5px;
       margin-bottom: 30px;
     }
 
+    .hero p {
+      max-width: 550px;
+      margin: auto;
+      font-size: 17px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 38px;
+      padding: 15px 28px;
+      background: var(--ink);
+      color: white;
+      border-radius: 100px;
+      font-size: 13px;
+      transition: transform 0.25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: normal;
+      letter-spacing: -1.5px;
+    }
+
+    .section-description {
+      max-width: 420px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* FEATURED CARD */
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      min-height: 520px;
+      background: #f3f1ec;
+      overflow: hidden;
+    }
+
+    .featured-image {
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.05),
+          rgba(0,0,0,0.05)
+        ),
+        url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85")
+        center/cover;
+      min-height: 450px;
+    }
+
+    .featured-content {
+      padding: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-content span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .featured-content h3 {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .featured-content p {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .text-link {
+      font-size: 13px;
+      font-weight: bold;
+      border-bottom: 1px solid #222;
+      padding-bottom: 5px;
+      width: fit-content;
+    }
+
+    /* CATEGORIES */
+
     .categories {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
     }
 
     .category {
-      padding: 25px 15px;
-      border: 1px solid #eeeeee;
-      border-radius: 12px;
-      text-align: center;
-      background: white;
+      min-height: 220px;
+      background: var(--cream);
+      padding: 25px;
+      display: flex;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
     }
 
     .category h3 {
-      margin: 0 0 8px;
+      font-family: Georgia, serif;
+      font-size: 27px;
+      font-weight: normal;
     }
 
-    .category p {
-      margin: 0;
-      color: #777777;
-      font-size: 14px;
+    .category-number {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #aaa;
+      font-size: 11px;
     }
+
+    /* PHILOSOPHY */
+
+    .philosophy {
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      padding: 120px 24px;
+    }
+
+    .philosophy-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .philosophy small {
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+    }
+
+    .philosophy h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 65px);
+      font-weight: normal;
+      line-height: 1.05;
+      margin: 25px 0;
+    }
+
+    .philosophy p {
+      max-width: 550px;
+      margin: auto;
+      color: #aaa;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
 
     footer {
-      margin-top: 30px;
-      padding: 30px 20px;
-      background: #f7f7f7;
-      text-align: center;
-      color: #666666;
-      font-size: 13px;
+      background: #111;
+      color: #aaa;
+      border-top: 1px solid #292929;
+      padding: 45px 24px;
     }
 
-    footer a {
-      color: #444444;
-      margin: 0 7px;
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        padding: 17px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 72vh;
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        letter-spacing: -3px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 75px 18px;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-title {
+        font-size: 36px;
+        margin-bottom: 15px;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        min-height: 330px;
+      }
+
+      .featured-content {
+        padding: 35px 25px 45px;
+      }
+
+      .featured-content h3 {
+        font-size: 34px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category {
+        min-height: 180px;
+      }
+
+      .category h3 {
+        font-size: 23px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
@@ -117,63 +412,200 @@
 <body>
 
   <header>
-    <div class="logo">Worthy Finds</div>
-    <div class="tagline">Things worth finding.</div>
+    <nav class="nav">
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Kitchen</a>
-      <a href="#">Home</a>
-      <a href="#">Gadgets</a>
-      <a href="#">About</a>
+      <a href="#" class="logo">
+        Worthy Finds
+      </a>
+
+      <div class="nav-links">
+        <a href="#finds">Finds</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </div>
+
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Find things worth having.</h1>
-    <p>
-      Useful products, clever finds, and everyday things that can make life
-      a little easier.
-    </p>
-  </section>
 
-  <section class="section">
-    <h2>Explore Worthy Finds</h2>
+  <main>
 
-    <div class="categories">
+    <!-- HERO -->
 
-      <div class="category">
-        <h3>Kitchen</h3>
-        <p>Useful kitchen products and clever storage finds.</p>
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Curated everyday discoveries
+        </div>
+
+        <h1>
+          Things<br>
+          worth finding.
+        </h1>
+
+        <p>
+          Useful products, clever discoveries and beautiful little things
+          that make everyday life better.
+        </p>
+
+        <a href="#finds" class="hero-button">
+          Explore the finds
+        </a>
+
       </div>
 
-      <div class="category">
-        <h3>Home</h3>
-        <p>Simple products that make your home more practical.</p>
+    </section>
+
+
+    <!-- FEATURED -->
+
+    <section class="section" id="finds">
+
+      <div class="section-header">
+
+        <div>
+          <div class="section-label">
+            Worth finding
+          </div>
+
+          <h2 class="section-title">
+            Start here.
+          </h2>
+        </div>
+
+        <p class="section-description">
+          We look for products that solve problems, save space,
+          make life easier or are simply too good not to know about.
+        </p>
+
       </div>
 
-      <div class="category">
-        <h3>Gadgets</h3>
-        <p>Interesting gadgets and useful everyday technology.</p>
+
+      <article class="featured">
+
+        <div class="featured-image"></div>
+
+        <div class="featured-content">
+
+          <span>
+            Kitchen
+          </span>
+
+          <h3>
+            Small kitchen finds that make a big difference.
+          </h3>
+
+          <p>
+            Clever products for the kitchen that help you use your
+            space better and make everyday tasks easier.
+          </p>
+
+          <a href="#" class="text-link">
+            Discover the finds →
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section" id="categories">
+
+      <div class="section-header">
+
+        <div>
+          <div class="section-label">
+            Explore
+          </div>
+
+          <h2 class="section-title">
+            Find your thing.
+          </h2>
+        </div>
+
       </div>
 
-      <div class="category">
-        <h3>Clothing</h3>
-        <p>Accessories and products worth checking out.</p>
+
+      <div class="categories">
+
+        <a href="#" class="category">
+          <span class="category-number">01</span>
+          <h3>Kitchen</h3>
+        </a>
+
+        <a href="#" class="category">
+          <span class="category-number">02</span>
+          <h3>Home</h3>
+        </a>
+
+        <a href="#" class="category">
+          <span class="category-number">03</span>
+          <h3>Gadgets</h3>
+        </a>
+
+        <a href="#" class="category">
+          <span class="category-number">04</span>
+          <h3>Style</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHILOSOPHY -->
+
+    <section class="philosophy" id="about">
+
+      <div class="philosophy-inner">
+
+        <small>
+          The Worthy Finds philosophy
+        </small>
+
+        <h2>
+          Not everything needs to be bought.
+          Some things just need to be found.
+        </h2>
+
+        <p>
+          Worthy Finds exists to uncover useful, interesting and
+          thoughtfully chosen products — without making the internet
+          feel like one giant shopping cart.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        Worthy Finds
+      </div>
+
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Affiliate Disclosure</a>
+        <a href="#">Contact</a>
       </div>
 
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Worthy Finds. All rights reserved.</p>
-
-    <p>
-      <a href="#">About</a>
-      <a href="#">Privacy</a>
-      <a href="#">Affiliate Disclosure</a>
-      <a href="#">Contact</a>
-    </p>
   </footer>
 
 </body>
