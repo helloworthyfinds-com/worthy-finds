@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Find 01 — Worthy Finds</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f5f2eb;
+      --paper: #faf9f5;
+      --ink: #181816;
+      --muted: #77736b;
+      --line: #ddd9d0;
+      --dark: #171715;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: rgba(245, 242, 235, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(24, 24, 22, 0.08);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .logo em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    /* PRODUCT HERO */
+
+    .product-hero {
+      max-width: 1250px;
+      margin: auto;
+      padding: 70px 5vw 110px;
+    }
+
+    .breadcrumb {
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .product-image {
+      min-height: 650px;
+      background-image: url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-copy {
+      max-width: 520px;
+    }
+
+    .category {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+
+    .description {
+      color: #666159;
+      font-size: 15px;
+      max-width: 470px;
+    }
+
+    .price {
+      margin-top: 30px;
+      font-size: 15px;
+    }
+
+    .price strong {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--dark);
+      color: white;
+      padding: 16px 25px;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta:hover {
+      opacity: 0.8;
+    }
+
+    /* EDITORIAL SECTION */
+
+    .editorial {
+      background: var(--paper);
+      padding: 110px 5vw;
+    }
+
+    .editorial-inner {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .editorial h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      max-width: 750px;
+      margin-bottom: 35px;
+    }
+
+    .editorial p {
+      color: #5e5a53;
+      font-size: 16px;
+      max-width: 680px;
+      margin-bottom: 25px;
+    }
+
+    /* DETAILS */
+
+    .details {
+      padding: 100px 5vw;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .detail {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail:nth-child(odd) {
+      margin-right: 45px;
+    }
+
+    .detail-label {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .detail-value {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      background: var(--dark);
+      color: white;
+      padding: 110px 5vw;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .final-cta p {
+      color: #bcb8b0;
+      max-width: 520px;
+      margin: auto;
+      font-size: 14px;
+    }
+
+    .final-cta a {
+      display: inline-block;
+      margin-top: 30px;
+      border-bottom: 1px solid #aaa69d;
+      padding-bottom: 5px;
+      font-size: 12px;
+    }
+
+    /* DISCLOSURE */
+
+    .disclosure {
+      max-width: 800px;
+      margin: auto;
+      padding: 45px 5vw;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 5vw 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .footer-brand em {
+      font-style: italic;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 18px 6vw;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 10px;
+      }
+
+      .product-hero {
+        padding: 45px 6vw 80px;
+      }
+
+      .breadcrumb {
+        margin-bottom: 30px;
+      }
+
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .product-image {
+        min-height: 430px;
+      }
+
+      h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+      }
+
+      .intro {
+        font-size: 20px;
+      }
+
+      .editorial {
+        padding: 80px 6vw;
+      }
+
+      .editorial h2 {
+        font-size: 42px;
+      }
+
+      .details {
+        padding: 75px 6vw;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      .final-cta {
+        padding: 85px 6vw;
+      }
+
+      .footer-top {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="#">Home</a>
+      <a href="#">Gadgets</a>
+      <a href="#">Style</a>
+    </div>
+
+  </nav>
+
+
+  <!-- PRODUCT HERO -->
+
+  <section class="product-hero">
+
+    <div class="breadcrumb">
+      Kitchen / Organization / Find 01
+    </div>
+
+    <div class="product-layout">
+
+      <div class="product-image"></div>
+
+      <div class="product-copy">
+
+        <div class="category">
+          Kitchen Organization
+        </div>
+
+        <h1>
+          The rack that gives your counter back.
+        </h1>
+
+        <p class="intro">
+          A simple kitchen solution for making
+          better use of the space around your sink.
+        </p>
+
+        <p class="description">
+          This is the kind of find we look for:
+          practical, unobtrusive and genuinely useful
+          when your kitchen could use a little more room.
+        </p>
+
+        <div class="price">
+          From <strong>$24</strong>
+        </div>
+
+        <a href="#" class="cta">
+          See the find →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY WE LIKE IT -->
+
+  <section class="editorial">
+
+    <div class="editorial-inner">
+
+      <div class="section-label">
+        Why it's worth finding
+      </div>
+
+      <h2>
+        Sometimes the smartest storage
+        is the space you're already using.
+      </h2>
+
+      <p>
+        Kitchen counters disappear quickly.
+        Plates, cups, vegetables and cooking tools
+        all compete for the same limited space.
+      </p>
+
+      <p>
+        An over-the-sink rack makes use of an area
+        that normally does very little. It can give
+        dishes somewhere to dry without taking
+        another piece of your counter.
+      </p>
+
+      <p>
+        That's the kind of simple idea we like at
+        Worthy Finds: nothing complicated,
+        just a better use of something you already have.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DETAILS -->
+
+  <section class="details">
+
+    <div class="section-label">
+      Before you buy
+    </div>
+
+    <div class="details-grid">
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Best for
+        </div>
+
+        <div class="detail-value">
+          Small or crowded kitchens
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Material
+        </div>
+
+        <div class="detail-value">
+          To be confirmed
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Size
+        </div>
+
+        <div class="detail-value">
+          Check your sink first
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          What we like
+        </div>
+
+        <div class="detail-value">
+          Uses overlooked space
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <h2>
+      Worth finding.
+    </h2>
+
+    <p>
+      See the current product, available options
+      and latest price.
+    </p>
+
+    <a href="#">
+      See the find →
+    </a>
+
+  </section>
+
+
+  <!-- DISCLOSURE -->
+
+  <div class="disclosure">
+
+    Worthy Finds may earn a commission when you
+    purchase through certain links on this page.
+    This does not affect the price you pay.
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        Worthy <em>Finds</em>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#">Privacy</a>
+        <a href="#">Disclosure</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Worthy Finds. Things worth finding.
+    </div>
+
+  </footer>
+
+</body>
+</html>
