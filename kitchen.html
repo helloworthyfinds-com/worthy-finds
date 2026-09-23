@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kitchen Finds — Worthy Finds</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f5f2eb;
+      --paper: #faf9f5;
+      --ink: #181816;
+      --muted: #77736b;
+      --line: #ddd9d0;
+      --dark: #171715;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: rgba(245, 242, 235, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(24, 24, 22, 0.08);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .logo em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 105px 5vw 85px;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(52px, 8vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      max-width: 850px;
+    }
+
+    .hero-copy {
+      margin-top: 35px;
+      max-width: 540px;
+      font-size: 17px;
+      color: #555149;
+    }
+
+    /* FEATURED INTRO */
+
+    .intro {
+      border-top: 1px solid var(--line);
+      padding: 35px 5vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .intro-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--muted);
+    }
+
+    .intro-text {
+      max-width: 600px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    /* COLLECTION */
+
+    .collection {
+      padding: 80px 5vw 120px;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 46px;
+      font-weight: 400;
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PRODUCT GRID */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 28px;
+    }
+
+    .find {
+      display: block;
+    }
+
+    .image {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .find-number {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(250, 249, 245, 0.9);
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .find-info {
+      padding-top: 19px;
+    }
+
+    .category {
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .find-title {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      line-height: 1.15;
+      margin-bottom: 9px;
+    }
+
+    .find-description {
+      color: #666159;
+      font-size: 14px;
+      max-width: 470px;
+    }
+
+    .discover {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 12px;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 3px;
+    }
+
+    /* FEATURED FIND */
+
+    .featured {
+      margin-top: 120px;
+      background: var(--dark);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 600px;
+    }
+
+    .featured-image {
+      background-image: url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=85");
+      background-size: cover;
+      background-position: center;
+      min-height: 600px;
+    }
+
+    .featured-content {
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-content .eyebrow {
+      color: #aaa69d;
+    }
+
+    .featured-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .featured-content p {
+      color: #bbb7af;
+      max-width: 430px;
+      font-size: 15px;
+    }
+
+    .featured-link {
+      margin-top: 35px;
+      font-size: 12px;
+      border-bottom: 1px solid #aaa69d;
+      padding-bottom: 5px;
+      width: fit-content;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 70px 5vw 35px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+    }
+
+    .footer-brand em {
+      font-style: italic;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 18px 6vw;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 80px 6vw 70px;
+      }
+
+      h1 {
+        font-size: 61px;
+        letter-spacing: -2.5px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .intro {
+        display: block;
+        padding: 28px 6vw;
+      }
+
+      .intro-text {
+        margin-top: 20px;
+        font-size: 22px;
+      }
+
+      .collection {
+        padding: 65px 6vw 90px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .image {
+        height: 430px;
+      }
+
+      .featured {
+        display: block;
+        margin-top: 80px;
+      }
+
+      .featured-image {
+        min-height: 430px;
+      }
+
+      .featured-content {
+        padding: 55px 30px 65px;
+      }
+
+      .featured-content h2 {
+        font-size: 43px;
+      }
+
+      .footer-top {
+        display: block;
+        margin-bottom: 55px;
+      }
+
+      .footer-links {
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="#">Home</a>
+      <a href="#">Gadgets</a>
+      <a href="#">Style</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      Kitchen / Worthy Finds
+    </div>
+
+    <h1>
+      The kitchen,
+      <em>reconsidered.</em>
+    </h1>
+
+    <p class="hero-copy">
+      Clever tools, small-space solutions and beautiful little discoveries
+      that make everyday kitchen life easier.
+    </p>
+
+  </header>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="intro-label">
+      Our kitchen edit
+    </div>
+
+    <div class="intro-text">
+      Not more things. Just better things.
+      The useful little finds that earn their place.
+    </div>
+
+  </section>
+
+
+  <!-- COLLECTION -->
+
+  <main class="collection">
+
+    <div class="section-heading">
+      <h2>Worth finding.</h2>
+      <p>A few of our current discoveries.</p>
+    </div>
+
+
+    <div class="grid">
+
+      <!-- FIND 01 -->
+
+      <a href="#" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85');">
+
+          <div class="find-number">
+            01
+          </div>
+
+        </div>
+
+        <div class="find-info">
+
+          <div class="category">
+            Organization
+          </div>
+
+          <div class="find-title">
+            The overlooked-space solution
+          </div>
+
+          <p class="find-description">
+            When your kitchen is running out of room,
+            sometimes the answer is simply looking somewhere else.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- FIND 02 -->
+
+      <a href="#" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85');">
+
+          <div class="find-number">
+            02
+          </div>
+
+        </div>
+
+        <div class="find-info">
+
+          <div class="category">
+            Cooking
+          </div>
+
+          <div class="find-title">
+            A smarter way to prep
+          </div>
+
+          <p class="find-description">
+            Small tools that quietly make the most annoying
+            parts of cooking much easier.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- FIND 03 -->
+
+      <a href="#" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85');">
+
+          <div class="find-number">
+            03
+          </div>
+
+        </div>
+
+        <div class="find-info">
+
+          <div class="category">
+            Storage
+          </div>
+
+          <div class="find-title">
+            Make the most of the space you have
+          </div>
+
+          <p class="find-description">
+            Practical discoveries for crowded counters,
+            messy cabinets and kitchens that need a little help.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- FIND 04 -->
+
+      <a href="#" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1200&q=85');">
+
+          <div class="find-number">
+            04
+          </div>
+
+        </div>
+
+        <div class="find-info">
+
+          <div class="category">
+            Everyday
+          </div>
+
+          <div class="find-title">
+            Things you use more than you expect
+          </div>
+
+          <p class="find-description">
+            Simple kitchen discoveries that become part
+            of your routine before you even notice.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- FEATURED -->
+
+    <section class="featured">
+
+      <div class="featured-image"></div>
+
+      <div class="featured-content">
+
+        <div class="eyebrow">
+          Worth finding
+        </div>
+
+        <h2>
+          Your kitchen
+          can work harder.
+        </h2>
+
+        <p>
+          The right little changes can make a surprisingly
+          big difference. We look for the ones actually
+          worth making.
+        </p>
+
+        <a href="#" class="featured-link">
+          Explore the kitchen edit →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        Worthy <em>Finds</em>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#">Privacy</a>
+        <a href="#">Disclosure</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Worthy Finds. Things worth finding.
+    </div>
+
+  </footer>
+
+</body>
+</html>
