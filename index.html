@@ -4,23 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Worthy Finds — Things Worth Finding</title>
+  <title>Worthy Finds — Discover Better Things</title>
 
-  <meta name="description" content="Worthy Finds discovers useful, beautiful and clever products worth knowing about.">
+  <meta name="description" content="Worthy Finds is a curated collection of useful, beautiful and clever things worth discovering.">
 
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+    :root {
+      --cream: #f4f1eb;
+      --paper: #fbfaf7;
+      --ink: #151515;
+      --soft: #77736d;
+      --line: #dedad2;
+      --accent: #8a755f;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    :root {
-      --ink: #171717;
-      --muted: #777;
-      --cream: #f7f5f0;
-      --line: #e8e5df;
-      --white: #ffffff;
     }
 
     html {
@@ -28,10 +32,10 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
+      background: var(--paper);
       color: var(--ink);
-      line-height: 1.5;
+      font-family: "DM Sans", Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     a {
@@ -39,304 +43,415 @@
       text-decoration: none;
     }
 
-    /* HEADER */
+    /* ---------------- HEADER ---------------- */
 
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background: rgba(251,250,247,0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
     }
 
     .nav {
-      max-width: 1200px;
+      height: 76px;
+      max-width: 1350px;
       margin: auto;
-      padding: 20px 24px;
+      padding: 0 35px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
-    .logo {
-      font-family: Georgia, serif;
+    .brand {
+      font-family: "Playfair Display", Georgia, serif;
       font-size: 25px;
-      letter-spacing: -0.8px;
-      font-weight: bold;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      font-style: italic;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
-      font-size: 13px;
-      color: #555;
+      gap: 35px;
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
-    .nav-links a:hover {
-      color: #000;
+    .nav-links a {
+      position: relative;
+      padding-bottom: 5px;
     }
 
-    /* HERO */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------------- HERO ---------------- */
 
     .hero {
-      min-height: 78vh;
-      background: var(--cream);
+      min-height: 100vh;
+      padding: 150px 35px 70px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 24px;
     }
 
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #777;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: clamp(50px, 10vw, 100px);
-      line-height: 0.95;
-      letter-spacing: -5px;
-      margin-bottom: 30px;
-    }
-
-    .hero p {
-      max-width: 550px;
+    .hero-grid {
+      width: 100%;
+      max-width: 1350px;
       margin: auto;
-      font-size: 17px;
-      color: #666;
-      line-height: 1.7;
-    }
-
-    .hero-button {
-      display: inline-block;
-      margin-top: 38px;
-      padding: 15px 28px;
-      background: var(--ink);
-      color: white;
-      border-radius: 100px;
-      font-size: 13px;
-      transition: transform 0.25s ease;
-    }
-
-    .hero-button:hover {
-      transform: translateY(-3px);
-    }
-
-    /* SECTIONS */
-
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 100px 24px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 40px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      font-weight: normal;
-      letter-spacing: -1.5px;
-    }
-
-    .section-description {
-      max-width: 420px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    /* FEATURED CARD */
-
-    .featured {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      min-height: 520px;
-      background: #f3f1ec;
-      overflow: hidden;
+      grid-template-columns: 0.8fr 1.2fr;
+      min-height: 690px;
     }
 
-    .featured-image {
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.05),
-          rgba(0,0,0,0.05)
-        ),
-        url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85")
-        center/cover;
-      min-height: 450px;
-    }
-
-    .featured-content {
-      padding: 55px;
+    .hero-copy {
+      background: var(--cream);
+      padding: 80px 65px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .featured-content span {
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(60px, 7vw, 105px);
+      line-height: 0.91;
+      letter-spacing: -5px;
+      max-width: 600px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 390px;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-top: 35px;
+    }
+
+    .hero-link {
+      margin-top: 40px;
+      width: fit-content;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 7px;
       font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background:
+        url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.02),
+        rgba(0,0,0,0.18)
+      );
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 25px;
+      left: 28px;
+      z-index: 2;
+      color: white;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ---------------- INTRO ---------------- */
+
+    .intro {
+      max-width: 1000px;
+      margin: auto;
+      padding: 150px 30px;
+      text-align: center;
+    }
+
+    .intro-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .intro h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-top: 25px;
+    }
+
+    .intro p {
+      max-width: 570px;
+      margin: 30px auto 0;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* ---------------- FEATURE ---------------- */
+
+    .feature {
+      max-width: 1350px;
+      margin: auto;
+      padding: 0 35px 150px;
+    }
+
+    .feature-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .feature-top h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 43px;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+
+    .feature-top span {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .feature-card {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      min-height: 600px;
+      background: var(--cream);
+    }
+
+    .feature-image {
+      background:
+        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+    }
+
+    .feature-copy {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-category {
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #888;
+      font-size: 10px;
       margin-bottom: 20px;
     }
 
-    .featured-content h3 {
-      font-family: Georgia, serif;
-      font-size: 40px;
-      line-height: 1.1;
-      font-weight: normal;
-      margin-bottom: 20px;
+    .feature-copy h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 47px;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
     }
 
-    .featured-content p {
-      color: #777;
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 30px;
+    .feature-copy p {
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-top: 25px;
     }
 
-    .text-link {
-      font-size: 13px;
-      font-weight: bold;
-      border-bottom: 1px solid #222;
-      padding-bottom: 5px;
+    .discover {
+      margin-top: 35px;
       width: fit-content;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 8px;
     }
 
-    /* CATEGORIES */
+    /* ---------------- CATEGORIES ---------------- */
 
     .categories {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      background: var(--ink);
+      color: white;
+      padding: 130px 35px;
+    }
+
+    .categories-inner {
+      max-width: 1350px;
+      margin: auto;
+    }
+
+    .categories-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .categories-header small {
+      color: #9a968f;
+      letter-spacing: 2px;
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    .categories-header h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 55px;
+      font-weight: 400;
+    }
+
+    .category-list {
+      border-top: 1px solid #353535;
     }
 
     .category {
-      min-height: 220px;
-      background: var(--cream);
-      padding: 25px;
       display: flex;
-      align-items: end;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid #353535;
+      transition: padding 0.35s ease;
     }
 
     .category:hover {
-      transform: translateY(-5px);
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
-    .category h3 {
-      font-family: Georgia, serif;
-      font-size: 27px;
-      font-weight: normal;
+    .category-name {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 35px;
+      font-weight: 400;
     }
 
     .category-number {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: #aaa;
-      font-size: 11px;
-    }
-
-    /* PHILOSOPHY */
-
-    .philosophy {
-      background: var(--ink);
-      color: white;
-      text-align: center;
-      padding: 120px 24px;
-    }
-
-    .philosophy-inner {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .philosophy small {
-      color: #aaa;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      color: #777;
       font-size: 10px;
+      letter-spacing: 2px;
     }
 
-    .philosophy h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 6vw, 65px);
-      font-weight: normal;
-      line-height: 1.05;
-      margin: 25px 0;
-    }
+    /* ---------------- STATEMENT ---------------- */
 
-    .philosophy p {
-      max-width: 550px;
+    .statement {
+      max-width: 1050px;
       margin: auto;
-      color: #aaa;
-      line-height: 1.8;
-      font-size: 15px;
+      padding: 160px 30px;
+      text-align: center;
     }
 
-    /* FOOTER */
+    .statement h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -2px;
+    }
+
+    .statement h2 em {
+      font-style: italic;
+    }
+
+    .statement p {
+      color: var(--soft);
+      max-width: 550px;
+      margin: 30px auto 0;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    /* ---------------- FOOTER ---------------- */
 
     footer {
       background: #111;
-      color: #aaa;
-      border-top: 1px solid #292929;
-      padding: 45px 24px;
+      color: #888;
+      padding: 70px 35px 35px;
     }
 
     .footer-inner {
-      max-width: 1200px;
+      max-width: 1350px;
       margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
     }
 
-    .footer-logo {
+    .footer-brand {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 32px;
       color: white;
-      font-family: Georgia, serif;
-      font-size: 22px;
+      margin-bottom: 60px;
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+      border-top: 1px solid #2b2b2b;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .footer-links {
       display: flex;
-      gap: 20px;
-      font-size: 12px;
+      gap: 25px;
     }
 
-    /* MOBILE */
+    /* ---------------- MOBILE ---------------- */
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
 
       .nav {
-        padding: 17px 18px;
+        height: 65px;
+        padding: 0 20px;
+      }
+
+      .brand {
+        font-size: 22px;
       }
 
       .nav-links {
@@ -344,87 +459,131 @@
       }
 
       .hero {
-        min-height: 72vh;
-        padding: 60px 20px;
+        padding: 95px 15px 20px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 65px 28px;
       }
 
       .hero h1 {
-        font-size: 56px;
+        font-size: 61px;
         letter-spacing: -3px;
       }
 
-      .hero p {
-        font-size: 15px;
+      .hero-description {
+        font-size: 13px;
       }
 
-      .section {
-        padding: 75px 18px;
+      .hero-image {
+        min-height: 470px;
       }
 
-      .section-header {
+      .intro {
+        padding: 100px 25px;
+      }
+
+      .intro h2 {
+        font-size: 45px;
+      }
+
+      .feature {
+        padding: 0 15px 100px;
+      }
+
+      .feature-top {
         display: block;
       }
 
-      .section-title {
-        font-size: 36px;
-        margin-bottom: 15px;
+      .feature-top h2 {
+        font-size: 38px;
+        margin-top: 10px;
       }
 
-      .featured {
+      .feature-card {
         grid-template-columns: 1fr;
       }
 
-      .featured-image {
-        min-height: 330px;
+      .feature-image {
+        min-height: 390px;
       }
 
-      .featured-content {
-        padding: 35px 25px 45px;
+      .feature-copy {
+        padding: 45px 28px 55px;
       }
 
-      .featured-content h3 {
-        font-size: 34px;
+      .feature-copy h3 {
+        font-size: 38px;
       }
 
       .categories {
-        grid-template-columns: repeat(2, 1fr);
+        padding: 100px 25px;
       }
 
-      .category {
-        min-height: 180px;
+      .categories-header {
+        display: block;
       }
 
-      .category h3 {
-        font-size: 23px;
+      .categories-header h2 {
+        font-size: 45px;
+        margin-top: 10px;
       }
 
-      .footer-inner {
-        flex-direction: column;
+      .category-name {
+        font-size: 29px;
+      }
+
+      .statement {
+        padding: 110px 25px;
+      }
+
+      .statement h2 {
+        font-size: 46px;
+      }
+
+      footer {
+        padding: 60px 25px 30px;
+      }
+
+      .footer-bottom {
+        display: block;
       }
 
       .footer-links {
+        margin-top: 20px;
         flex-wrap: wrap;
+        gap: 15px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <header>
+
     <nav class="nav">
 
-      <a href="#" class="logo">
-        Worthy Finds
+      <a href="#" class="brand">
+        Worthy <span>Finds</span>
       </a>
 
       <div class="nav-links">
         <a href="#finds">Finds</a>
         <a href="#categories">Categories</a>
-        <a href="#about">About</a>
+        <a href="#about">Our Story</a>
       </div>
 
     </nav>
+
   </header>
 
 
@@ -434,75 +593,101 @@
 
     <section class="hero">
 
-      <div class="hero-content">
+      <div class="hero-grid">
 
-        <div class="eyebrow">
-          Curated everyday discoveries
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            Curated everyday discoveries
+          </div>
+
+          <h1>
+            Things<br>
+            <em>worth</em><br>
+            finding.
+          </h1>
+
+          <p class="hero-description">
+            Useful things. Beautiful things. Clever things.
+            Discoveries that make you wonder how you ever lived without them.
+          </p>
+
+          <a href="#finds" class="hero-link">
+            Explore the collection →
+          </a>
+
         </div>
 
-        <h1>
-          Things<br>
-          worth finding.
-        </h1>
+        <div class="hero-image">
 
-        <p>
-          Useful products, clever discoveries and beautiful little things
-          that make everyday life better.
-        </p>
+          <div class="image-caption">
+            Worthy Finds / 001
+          </div>
 
-        <a href="#finds" class="hero-button">
-          Explore the finds
-        </a>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- FEATURED -->
+    <!-- INTRO -->
 
-    <section class="section" id="finds">
+    <section class="intro">
 
-      <div class="section-header">
+      <div class="intro-label">
+        Our point of view
+      </div>
+
+      <h2>
+        The internet is full of things.
+        We look for the ones worth knowing.
+      </h2>
+
+      <p>
+        Worthy Finds is a carefully curated place for products,
+        discoveries and everyday solutions that deserve a second look.
+      </p>
+
+    </section>
+
+
+    <!-- FEATURE -->
+
+    <section class="feature" id="finds">
+
+      <div class="feature-top">
 
         <div>
-          <div class="section-label">
-            Worth finding
-          </div>
-
-          <h2 class="section-title">
-            Start here.
-          </h2>
+          <span>01 / Featured</span>
+          <h2>Worth finding now.</h2>
         </div>
 
-        <p class="section-description">
-          We look for products that solve problems, save space,
-          make life easier or are simply too good not to know about.
-        </p>
+        <span>Updated regularly</span>
 
       </div>
 
 
-      <article class="featured">
+      <article class="feature-card">
 
-        <div class="featured-image"></div>
+        <div class="feature-image"></div>
 
-        <div class="featured-content">
+        <div class="feature-copy">
 
-          <span>
-            Kitchen
-          </span>
+          <div class="feature-category">
+            Kitchen / Organization
+          </div>
 
           <h3>
-            Small kitchen finds that make a big difference.
+            Small-space finds that make your kitchen feel bigger.
           </h3>
 
           <p>
-            Clever products for the kitchen that help you use your
-            space better and make everyday tasks easier.
+            Clever ways to use overlooked space, keep things organized
+            and make everyday kitchen life a little easier.
           </p>
 
-          <a href="#" class="text-link">
+          <a href="#" class="discover">
             Discover the finds →
           </a>
 
@@ -515,72 +700,62 @@
 
     <!-- CATEGORIES -->
 
-    <section class="section" id="categories">
+    <section class="categories" id="categories">
 
-      <div class="section-header">
+      <div class="categories-inner">
 
-        <div>
-          <div class="section-label">
-            Explore
+        <div class="categories-header">
+
+          <div>
+            <small>Explore Worthy Finds</small>
+            <h2>Find your thing.</h2>
           </div>
 
-          <h2 class="section-title">
-            Find your thing.
-          </h2>
         </div>
 
-      </div>
 
+        <div class="category-list">
 
-      <div class="categories">
+          <a href="#" class="category">
+            <span class="category-name">Kitchen</span>
+            <span class="category-number">01</span>
+          </a>
 
-        <a href="#" class="category">
-          <span class="category-number">01</span>
-          <h3>Kitchen</h3>
-        </a>
+          <a href="#" class="category">
+            <span class="category-name">Home</span>
+            <span class="category-number">02</span>
+          </a>
 
-        <a href="#" class="category">
-          <span class="category-number">02</span>
-          <h3>Home</h3>
-        </a>
+          <a href="#" class="category">
+            <span class="category-name">Gadgets</span>
+            <span class="category-number">03</span>
+          </a>
 
-        <a href="#" class="category">
-          <span class="category-number">03</span>
-          <h3>Gadgets</h3>
-        </a>
+          <a href="#" class="category">
+            <span class="category-name">Style</span>
+            <span class="category-number">04</span>
+          </a>
 
-        <a href="#" class="category">
-          <span class="category-number">04</span>
-          <h3>Style</h3>
-        </a>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- PHILOSOPHY -->
+    <!-- STATEMENT -->
 
-    <section class="philosophy" id="about">
+    <section class="statement" id="about">
 
-      <div class="philosophy-inner">
+      <h2>
+        Not everything needs to be bought.
+        Some things just need to be <em>found.</em>
+      </h2>
 
-        <small>
-          The Worthy Finds philosophy
-        </small>
-
-        <h2>
-          Not everything needs to be bought.
-          Some things just need to be found.
-        </h2>
-
-        <p>
-          Worthy Finds exists to uncover useful, interesting and
-          thoughtfully chosen products — without making the internet
-          feel like one giant shopping cart.
-        </p>
-
-      </div>
+      <p>
+        We believe good products don't need hype.
+        They just need to be useful, thoughtful or unexpectedly brilliant.
+      </p>
 
     </section>
 
@@ -593,15 +768,22 @@
 
     <div class="footer-inner">
 
-      <div class="footer-logo">
+      <div class="footer-brand">
         Worthy Finds
       </div>
 
-      <div class="footer-links">
-        <a href="#">About</a>
-        <a href="#">Privacy</a>
-        <a href="#">Affiliate Disclosure</a>
-        <a href="#">Contact</a>
+      <div class="footer-bottom">
+
+        <div>
+          © 2026 Worthy Finds
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Disclosure</a>
+          <a href="#">Contact</a>
+        </div>
+
       </div>
 
     </div>
