@@ -20,7 +20,44 @@
       --line: #dedad2;
       --accent: #8a755f;
     }
+    .category-menu {
+      position: relative;
+    }
 
+    .category-menu summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .category-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-dropdown {
+      position: absolute;
+      top: 32px;
+      right: 0;
+      min-width: 170px;
+      padding: 10px 0;
+      background: rgba(251, 250, 247, 0.98);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+      z-index: 100;
+    }
+
+    .category-dropdown a {
+      display: block;
+      padding: 11px 18px;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .category-dropdown a:hover {
+      background: var(--cream);
+    }
     * {
       box-sizing: border-box;
       margin: 0;
