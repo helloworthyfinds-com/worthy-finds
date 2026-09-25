@@ -573,8 +573,14 @@
 .category-menu > summary {
   display: block;
   width: 100%;
-  padding: 18px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
+  transition: padding-left 0.25s ease;
+}
+
+.nav-links > a:active,
+.category-menu > summary:active {
+  padding-left: 6px;
 }
 
 .category-menu > summary::after {
