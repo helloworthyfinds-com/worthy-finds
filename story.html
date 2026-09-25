@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Story — Worthy Finds</title>
+  <meta name="description" content="The story and philosophy behind Worthy Finds.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f4f1eb;
+      --paper: #fbfaf7;
+      --ink: #151515;
+      --soft: #77736d;
+      --line: #dedad2;
+      --accent: #8a755f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 30px 7%;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand em {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+    }
+
+    .back {
+      color: var(--soft);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .back:hover {
+      color: var(--ink);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 25px 120px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(46px, 8vw, 82px);
+      font-weight: 500;
+      line-height: 1.03;
+      letter-spacing: -2.5px;
+      margin-bottom: 45px;
+    }
+
+    .lead {
+      max-width: 680px;
+      color: var(--soft);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 90px;
+    }
+
+    .story {
+      border-top: 1px solid var(--line);
+      padding-top: 45px;
+      max-width: 680px;
+    }
+
+    .story-label {
+      color: var(--soft);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .story p {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(25px, 4vw, 38px);
+      line-height: 1.35;
+      margin-bottom: 35px;
+    }
+
+    .story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .closing {
+      margin-top: 100px;
+      padding: 55px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .closing p {
+      max-width: 650px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.25;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 7%;
+      color: var(--soft);
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 24px 20px;
+      }
+
+      main {
+        padding: 75px 22px 90px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .lead {
+        font-size: 16px;
+        margin-bottom: 65px;
+      }
+
+      .closing {
+        margin-top: 75px;
+        padding: 45px 0;
+      }
+
+      .back {
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="brand">
+      Worthy <em>Finds</em>
+    </a>
+
+    <a href="index.html" class="back">
+      ← Back to Worthy Finds
+    </a>
+  </header>
+
+  <main>
+
+    <div class="eyebrow">Our story</div>
+
+    <h1>We look for the things worth finding.</h1>
+
+    <p class="lead">
+      The internet is full of things. New products appear every day,
+      each one promising to be better, smarter or more necessary than
+      the last.
+      <br><br>
+      We take a different approach. Worthy Finds is a carefully curated
+      place for products, discoveries and everyday solutions that deserve
+      a second look.
+    </p>
+
+    <section class="story">
+
+      <div class="story-label">What we believe</div>
+
+      <p>
+        Not everything needs to be bought.
+        Some things just need to be found.
+      </p>
+
+      <p>
+        We believe good products don't need hype.
+        They just need to be useful, thoughtful or unexpectedly brilliant.
+      </p>
+
+    </section>
+
+    <section class="closing">
+
+      <p>
+        Less noise. Better finds.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Worthy Finds
+  </footer>
+
+</body>
+</html>
