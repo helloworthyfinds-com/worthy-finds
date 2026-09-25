@@ -889,6 +889,14 @@
     </div>
 
   </footer>
+<script>
+  const menuButton = document.querySelector(".mobile-menu-button");
+  const navLinks = document.querySelector(".nav-links");
 
+  menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("menu-open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+  });
+</script>
 </body>
 </html>
