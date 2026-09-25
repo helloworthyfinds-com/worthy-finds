@@ -506,8 +506,21 @@
       }
 
       .nav-links {
-        display: none;
-      }
+  display: flex;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  background: rgba(251,250,247,0.98);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid var(--line);
+  padding: 30px 25px 35px;
+  flex-direction: column;
+  gap: 0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
       .hero {
         padding: 95px 15px 20px;
