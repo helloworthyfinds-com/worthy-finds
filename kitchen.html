@@ -897,6 +897,20 @@
     menuButton.setAttribute("aria-expanded", isOpen);
   });
 </script>
+<script>
+  const themeOptions = document.querySelectorAll(".theme-option");
 
+  themeOptions.forEach(option => {
+    option.addEventListener("click", () => {
+      const selectedTheme = option.dataset.theme;
+
+      document.body.classList.toggle("dark-mode", selectedTheme === "dark");
+
+      themeOptions.forEach(item => {
+        item.classList.toggle("active", item === option);
+      });
+    });
+  });
+</script>
 </body>
 </html>
