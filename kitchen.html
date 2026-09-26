@@ -82,15 +82,21 @@
   border: none;
   background: transparent;
   padding: 4px 0;
-  color: var(--muted);
+  color: var(--ink);
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
   cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
 }
 
 .theme-option.active {
-  color: var(--ink);
+  opacity: 1;
+}
+
+.theme-option:hover {
+  opacity: 0.75;
 }
 
 .theme-option:hover {
