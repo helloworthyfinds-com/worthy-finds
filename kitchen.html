@@ -275,15 +275,17 @@ body.dark-mode {
       overflow: hidden;
     }
 
-    .find-number {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: rgba(250, 249, 245, 0.9);
-      padding: 8px 12px;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
+   .find-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  color: var(--ink);
+  padding: 8px 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
 
     .find-info {
       padding-top: 19px;
