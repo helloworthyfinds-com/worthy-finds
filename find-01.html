@@ -410,78 +410,179 @@ nav {
       font-size: 10px;
     }
 
-    /* MOBILE */
+   /* MOBILE */
 
-    @media (max-width: 700px) {
+.mobile-menu-button {
+  display: none;
+}
 
-      nav {
-        padding: 18px 6vw;
-      }
+@media (max-width: 700px) {
 
-      .nav-links {
-        gap: 14px;
-        font-size: 10px;
-      }
+  .mobile-menu-button {
+    display: block;
+    width: 34px;
+    height: 34px;
+    padding: 7px 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
 
-      .product-hero {
-        padding: 45px 6vw 80px;
-      }
+  .mobile-menu-button span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--ink);
+    margin: 5px auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 
-      .breadcrumb {
-        margin-bottom: 30px;
-      }
+  .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
 
-      .product-layout {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
+  .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
 
-      .product-image {
-        min-height: 430px;
-      }
+  .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
 
-      h1 {
-        font-size: 55px;
-        letter-spacing: -2px;
-      }
+  nav {
+    padding: 18px 6vw;
+  }
 
-      .intro {
-        font-size: 20px;
-      }
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: color-mix(in srgb, var(--cream) 96%, transparent);
+    backdrop-filter: blur(18px);
+    border-top: 1px solid var(--line);
+    padding: 30px 25px 35px;
+    flex-direction: column;
+    gap: 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
-      .editorial {
-        padding: 80px 6vw;
-      }
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
 
-      .editorial h2 {
-        font-size: 42px;
-      }
+  .nav-links.menu-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 
-      .details {
-        padding: 75px 6vw;
-      }
+  .nav-links > a,
+  .category-menu > summary {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding-left 0.25s ease;
+  }
 
-      .details-grid {
-        grid-template-columns: 1fr;
-      }
+  .nav-links > a:active,
+  .category-menu > summary:active {
+    padding-left: 6px;
+  }
 
-      .detail:nth-child(odd) {
-        margin-right: 0;
-      }
+  .category-menu {
+    width: 100%;
+  }
 
-      .final-cta {
-        padding: 85px 6vw;
-      }
+  .category-menu > summary::after {
+    float: right;
+    margin-top: 2px;
+  }
 
-      .footer-top {
-        display: block;
-      }
+  .category-dropdown {
+    position: static;
+    width: 100%;
+    padding: 4px 0 8px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
 
-      .footer-links {
-        margin-top: 25px;
-        flex-wrap: wrap;
-      }
-    }
+  .category-dropdown a {
+    padding: 12px 0 12px 18px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    border-bottom: none;
+  }
+
+  .category-dropdown a:hover {
+    background: transparent;
+  }
+
+  .product-hero {
+    padding: 45px 6vw 80px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 30px;
+  }
+
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .product-image {
+    min-height: 430px;
+  }
+
+  h1 {
+    font-size: 55px;
+    letter-spacing: -2px;
+  }
+
+  .intro {
+    font-size: 20px;
+  }
+
+  .editorial {
+    padding: 80px 6vw;
+  }
+
+  .editorial h2 {
+    font-size: 42px;
+  }
+
+  .details {
+    padding: 75px 6vw;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .final-cta {
+    padding: 85px 6vw;
+  }
+
+  .footer-top {
+    display: block;
+  }
+
+  .footer-links {
+    margin-top: 25px;
+    flex-wrap: wrap;
+  }
+}
   </style>
 </head>
 
