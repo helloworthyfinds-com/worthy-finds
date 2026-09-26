@@ -850,6 +850,35 @@ nav {
 <script>
   const themeOptions = document.querySelectorAll(".theme-option");
 
+  const savedTheme = localStorage.getItem("worthy-finds-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  themeOptions.forEach(option => {
+    option.classList.toggle(
+      "active",
+      option.dataset.theme === (savedTheme || "light")
+    );
+
+    option.addEventListener("click", () => {
+      const selectedTheme = option.dataset.theme;
+
+      document.body.classList.toggle(
+        "dark-mode",
+        selectedTheme === "dark"
+      );
+
+      localStorage.setItem("worthy-finds-theme", selectedTheme);
+
+      themeOptions.forEach(item => {
+        item.classList.toggle("active", item === option);
+      });
+    });
+  });
+</script>;
+
   themeOptions.forEach(option => {
     option.addEventListener("click", () => {
       const selectedTheme = option.dataset.theme;
