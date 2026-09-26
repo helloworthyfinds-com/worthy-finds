@@ -397,21 +397,50 @@
 
   <!-- NAVIGATION -->
 
-  <nav>
+ <nav>
 
-    <a href="index.html" class="logo">
-      Worthy <em>Finds</em>
-    </a>
+  <a href="index.html" class="logo">
+    Worthy <em>Finds</em>
+  </a>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="kitchen.html">Kitchen</a>
-      <a href="#">Home</a>
-      <a href="#">Gadgets</a>
-      <a href="#">Style</a>
-    </div>
+  <div class="theme-switch" aria-label="Theme switch">
+    <button type="button" class="theme-option active" data-theme="light">
+      Light
+    </button>
 
-  </nav>
+    <span>·</span>
+
+    <button type="button" class="theme-option" data-theme="dark">
+      Dark
+    </button>
+  </div>
+
+  <button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-links">
+
+    <a href="index.html">Finds</a>
+
+    <details class="category-menu">
+      <summary>Categories</summary>
+
+      <div class="category-dropdown">
+        <a href="kitchen.html">Kitchen 01</a>
+        <a href="home.html">Home 02</a>
+        <a href="gadgets.html">Gadgets 03</a>
+        <a href="style.html">Style 04</a>
+      </div>
+    </details>
+
+    <a href="story.html">Our Story</a>
+
+  </div>
+
+</nav>
 
 
   <!-- PRODUCT HERO -->
