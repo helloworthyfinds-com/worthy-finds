@@ -47,9 +47,9 @@ body.dark-mode {
       text-decoration: none;
     }
 
-    /* NAVIGATION */
+/* NAVIGATION */
 
-    nav {
+nav {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -63,30 +63,112 @@ body.dark-mode {
   transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-    .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing: -0.5px;
-    }
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
 
-    .logo em {
-      font-style: italic;
-      font-weight: 400;
-    }
+.logo em {
+  font-style: italic;
+  font-weight: 400;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 13px;
-    }
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  margin-right: 32px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
 
-    .nav-links a {
-      transition: opacity 0.2s ease;
-    }
+.theme-switch span {
+  color: var(--muted);
+}
 
-    .nav-links a:hover {
-      opacity: 0.55;
-    }
+.theme-option {
+  border: none;
+  background: transparent;
+  padding: 4px 0;
+  color: var(--ink);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+.theme-option.active {
+  opacity: 1;
+}
+
+.theme-option:hover {
+  opacity: 0.75;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+}
+
+.nav-links a {
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.55;
+}
+
+.category-menu {
+  position: relative;
+}
+
+.category-menu summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.category-menu summary::after {
+  content: "▾";
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 9px;
+}
+
+.category-dropdown {
+  position: absolute;
+  top: 28px;
+  right: -15px;
+  width: 180px;
+  padding: 8px 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+  z-index: 100;
+}
+
+.category-dropdown a {
+  display: block;
+  padding: 13px 18px;
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.category-dropdown a:hover {
+  background: var(--cream);
+}
 
     /* PRODUCT HERO */
 
