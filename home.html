@@ -3,496 +3,569 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Home — Worthy Finds</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --cream: #f5f2eb;
+      --paper: #faf9f5;
+      --ink: #181816;
+      --muted: #77736b;
+      --line: #ddd9d0;
+      --dark: #171715;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
-    :root {
-  --cream: #f5f2eb;
-  --paper: #faf9f5;
-  --ink: #181816;
-  --muted: #77736b;
-  --line: #ddd9d0;
-  --dark: #171715;
-}
-
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: "DM Sans", sans-serif;
-  line-height: 1.6;
-}
-
-body.dark-mode {
-  --cream: #171715;
-  --paper: #1d1d1a;
-  --ink: #f3f0e8;
-  --muted: #a7a39a;
-  --line: #35342f;
-  --dark: #11110f;
-
-  background: var(--cream);
-  color: var(--ink);
-}
-
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    body.dark-mode {
+      --cream: #171715;
+      --paper: #1d1d1a;
+      --ink: #f3f0e8;
+      --muted: #a7a39a;
+      --line: #35342f;
+      --dark: #11110f;
+      background: var(--cream);
+      color: var(--ink);
+    }
     a {
       color: inherit;
       text-decoration: none;
     }
-
- nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 5vw;
-  background: color-mix(in srgb, var(--cream) 90%, transparent);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  letter-spacing: -0.5px;
-}
-
-.logo em {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: auto;
-  margin-right: 32px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.theme-switch span {
-  color: var(--muted);
-}
-
-.theme-option {
-  border: none;
-  background: transparent;
-  padding: 4px 0;
-  color: var(--ink);
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  cursor: pointer;
-  opacity: 0.45;
-  transition: opacity 0.2s ease;
-}
-
-.theme-option.active {
-  opacity: 1;
-}
-
-.theme-option:hover {
-  opacity: 0.75;
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  font-size: 13px;
-}
-
-.nav-links a {
-  transition: opacity 0.2s ease;
-}
-
-.nav-links a:hover {
-  opacity: 0.55;
-}
-
-.category-menu {
-  position: relative;
-}
-
-.category-menu summary {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.category-menu summary::-webkit-details-marker {
-  display: none;
-}
-
-.category-menu summary::after {
-  content: "▾";
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 9px;
-}
-
-.category-dropdown {
-  position: absolute;
-  top: 28px;
-  right: -15px;
-  width: 180px;
-  padding: 8px 0;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
-  z-index: 100;
-}
-
-.category-dropdown a {
-  display: block;
-  padding: 13px 18px;
-  color: var(--ink);
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-.category-dropdown a:hover {
-  background: var(--cream);
-}
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: color-mix(in srgb, var(--cream) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+    .logo em {
+      font-style: italic;
+      font-weight: 400;
+    }
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: auto;
+      margin-right: 32px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .theme-switch span {
+      color: var(--muted);
+    }
+    .theme-option {
+      border: none;
+      background: transparent;
+      padding: 4px 0;
+      color: var(--ink);
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      cursor: pointer;
+      opacity: 0.45;
+      transition: opacity 0.2s ease;
+    }
+    .theme-option.active {
+      opacity: 1;
+    }
+    .theme-option:hover {
+      opacity: 0.75;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+    }
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+    .category-menu {
+      position: relative;
+    }
+    .category-menu summary {
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+    }
+    .category-menu summary::-webkit-details-marker {
+      display: none;
+    }
+    .category-menu summary::after {
+      content: "▾";
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 9px;
+    }
+    .category-dropdown {
+      position: absolute;
+      top: 28px;
+      right: -15px;
+      width: 180px;
+      padding: 8px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+      z-index: 100;
+    }
+    .category-dropdown a {
+      display: block;
+      padding: 13px 18px;
+      color: var(--ink);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .category-dropdown a:hover {
+      background: var(--cream);
+    }
+    /* HERO */
     .hero {
-      padding: 100px 6% 80px;
+      padding: 105px 5vw 85px;
+      max-width: 1250px;
+      margin: auto;
     }
-
     .eyebrow {
-      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 25px;
-      opacity: .55;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
-
     h1 {
-      font-family: Georgia, serif;
-      font-size: 70px;
-      font-weight: normal;
-      line-height: 1;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(52px, 8vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      max-width: 850px;
     }
-
-    .intro {
-      max-width: 550px;
-      margin-top: 30px;
+    .hero-copy {
+      margin-top: 35px;
+      max-width: 540px;
       font-size: 17px;
-      opacity: .7;
+      color: var(--muted);
     }
-
+    /* COLLECTION */
     .section {
-      padding: 60px 6%;
+      padding: 80px 5vw 120px;
+      max-width: 1250px;
+      margin: auto;
     }
-
     .label {
-      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
-      opacity: .55;
+      letter-spacing: 1.8px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 45px;
     }
-
     .finds {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
-
     .find {
-      padding: 35px;
-      min-height: 230px;
-      background: #eee9e1;
-      border: 1px solid #ddd8d0;
+      padding: 45px;
+      min-height: 280px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
-
     .number {
-      font-size: 12px;
-      opacity: .5;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--muted);
     }
-
     h2 {
-      font-family: Georgia, serif;
-      font-size: 30px;
-      font-weight: normal;
-      margin: 25px 0 12px;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
       line-height: 1.1;
     }
-
+    .find h2 {
+      font-size: 32px;
+      margin: 25px 0 14px;
+      letter-spacing: -1px;
+    }
     .find p {
       font-size: 14px;
-      opacity: .65;
+      color: var(--muted);
+      max-width: 430px;
     }
-
+    /* STATEMENT */
     .statement {
-      background: #20201e;
-      color: #f5f1ea;
-      padding: 90px 6%;
+      background: var(--dark);
+      color: #f3f0e8;
+      padding: 110px 5vw;
+      transition: background 0.25s ease;
     }
-
     .statement h2 {
-      font-size: 55px;
-      max-width: 800px;
+      font-size: clamp(42px, 5vw, 65px);
+      max-width: 850px;
+      letter-spacing: -2px;
     }
-
-footer {
-  padding: 70px 5vw 35px;
-  border-top: 1px solid #ddd8d0;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.footer-brand {
-  font-family: Georgia, serif;
-  font-size: 26px;
-}
-
-.footer-brand em {
-  font-style: italic;
-}
-
-.footer-links {
-  display: flex;
-  gap: 25px;
-  font-size: 12px;
-}
-
-.copyright {
-  color: #77736b;
-  font-size: 11px;
-}
-
-@media (max-width: 700px) {
-
-  .footer-top {
-    display: block;
-    margin-bottom: 55px;
-  }
-
-  .footer-links {
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-
-}
-
+    /* FOOTER */
+    footer {
+      padding: 70px 5vw 35px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+    }
+    .footer-brand em {
+      font-style: italic;
+    }
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+    }
+    .copyright {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    /* MOBILE MENU */
+    .mobile-menu-button {
+      display: none;
+    }
     @media (max-width: 700px) {
-      h1 {
-        font-size: 52px;
+      .mobile-menu-button {
+        display: block;
+        width: 34px;
+        height: 34px;
+        padding: 7px 4px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
       }
-
+      .mobile-menu-button span {
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--ink);
+        margin: 5px auto;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+      nav {
+        padding: 18px 6vw;
+      }
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: color-mix(in srgb, var(--cream) 96%, transparent);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid var(--line);
+        padding: 30px 25px 35px;
+        flex-direction: column;
+        gap: 0;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .nav-links.menu-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .nav-links > a,
+      .category-menu > summary {
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        transition: padding-left 0.25s ease;
+      }
+      .nav-links > a:active,
+      .category-menu > summary:active {
+        padding-left: 6px;
+      }
+      .category-menu {
+        width: 100%;
+      }
+      .category-menu > summary::after {
+        float: right;
+        margin-top: 2px;
+      }
+      .category-dropdown {
+        position: static;
+        width: 100%;
+        padding: 4px 0 8px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
+      .category-dropdown a {
+        padding: 12px 0 12px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        border-bottom: none;
+      }
+      .category-dropdown a:hover {
+        background: transparent;
+      }
+      .hero {
+        padding: 80px 6vw 70px;
+      }
+      h1 {
+        font-size: 61px;
+        letter-spacing: -2.5px;
+      }
+      .hero-copy {
+        font-size: 15px;
+      }
+      .section {
+        padding: 65px 6vw 90px;
+      }
       .finds {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 11px;
+      .find {
+        padding: 35px;
+        min-height: 230px;
       }
-
+      .find h2 {
+        font-size: 30px;
+      }
+      .statement {
+        padding: 85px 6vw;
+      }
       .statement h2 {
         font-size: 40px;
+      }
+      .footer-top {
+        display: block;
+        margin-bottom: 55px;
+      }
+      .footer-links {
+        margin-top: 30px;
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
-
 <body>
-
- <nav>
-
-  <a href="index.html" class="logo">
-    Worthy <em>Finds</em>
-  </a>
-
-  <div class="theme-switch" aria-label="Theme switch">
-    <button type="button" class="theme-option active" data-theme="light">
-      Light
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
+    <div class="theme-switch" aria-label="Theme switch">
+      <button type="button" class="theme-option active" data-theme="light">
+        Light
+      </button>
+      <span>·</span>
+      <button type="button" class="theme-option" data-theme="dark">
+        Dark
+      </button>
+    </div>
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-
-    <span>·</span>
-
-    <button type="button" class="theme-option" data-theme="dark">
-      Dark
-    </button>
-  </div>
-
-  <button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <div class="nav-links">
-
-    <a href="index.html">Finds</a>
-
-    <details class="category-menu">
-      <summary>Categories</summary>
-
-      <div class="category-dropdown">
-        <a href="kitchen.html">Kitchen 01</a>
-        <a href="home.html">Home 02</a>
-        <a href="gadgets.html">Gadgets 03</a>
-        <a href="style.html">Style 04</a>
-      </div>
-    </details>
-
-    <a href="story.html">Our Story</a>
-
-  </div>
-
-</nav>
-
-  <section class="hero">
-
+    <div class="nav-links">
+      <a href="index.html">Finds</a>
+      <details class="category-menu">
+        <summary>Categories</summary>
+        <div class="category-dropdown">
+          <a href="kitchen.html">Kitchen 01</a>
+          <a href="home.html">Home 02</a>
+          <a href="gadgets.html">Gadgets 03</a>
+          <a href="style.html">Style 04</a>
+        </div>
+      </details>
+      <a href="story.html">Our Story</a>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <header class="hero">
     <div class="eyebrow">
       Worthy Finds / Home
     </div>
-
     <h1>
       Home,<br>
       made better.
     </h1>
-
-    <p class="intro">
+    <p class="hero-copy">
       Useful little discoveries, clever solutions and things that make
       everyday spaces feel a little more considered.
     </p>
-
-  </section>
-
-
+  </header>
+  <!-- COLLECTION -->
   <section class="section">
-
     <div class="label">
       Worth finding
     </div>
-
     <div class="finds">
-
       <div class="find">
-        <div class="number">01</div>
-        <h2>Make space feel bigger.</h2>
+        <div class="number">
+          01
+        </div>
+        <h2>
+          Make space feel bigger.
+        </h2>
         <p>
           Clever ways to organize what you already have without making
           your home feel crowded.
         </p>
       </div>
-
-
       <div class="find">
-        <div class="number">02</div>
-        <h2>Small upgrades.</h2>
+        <div class="number">
+          02
+        </div>
+        <h2>
+          Small upgrades.
+        </h2>
         <p>
           Simple products that quietly make everyday routines easier.
         </p>
       </div>
-
-
       <div class="find">
-        <div class="number">03</div>
-        <h2>Better everyday storage.</h2>
+        <div class="number">
+          03
+        </div>
+        <h2>
+          Better everyday storage.
+        </h2>
         <p>
           Thoughtful ways to keep things tidy, accessible and out of the way.
         </p>
       </div>
-
-
       <div class="find">
-        <div class="number">04</div>
-        <h2>Things that just work.</h2>
+        <div class="number">
+          04
+        </div>
+        <h2>
+          Things that just work.
+        </h2>
         <p>
           No unnecessary hype. Just useful discoveries that earn their
           place at home.
         </p>
       </div>
-
     </div>
-
   </section>
-
-
+  <!-- STATEMENT -->
   <section class="statement">
-
     <h2>
       A better home doesn't always need more things.
       Sometimes it just needs better ones.
     </h2>
-
   </section>
-
-
- <footer>
-
-  <div class="footer-top">
-
-    <div class="footer-brand">
-      Worthy <em>Finds</em>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        Worthy <em>Finds</em>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="disclosure.html">Disclosure</a>
-      <a href="contact.html">Contact</a>
+    <div class="copyright">
+      © 2026 Worthy Finds. Things worth finding.
     </div>
-
-  </div>
-
-  <div class="copyright">
-    © 2026 Worthy Finds. Things worth finding.
-  </div>
-
-</footer>
-<script>
-  const themeOptions = document.querySelectorAll(".theme-option");
-
-  const savedTheme = localStorage.getItem("worthy-finds-theme");
-
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
-
-  themeOptions.forEach(option => {
-    option.classList.toggle(
-      "active",
-      option.dataset.theme === (savedTheme || "light")
-    );
-
-    option.addEventListener("click", () => {
-      const selectedTheme = option.dataset.theme;
-
-      document.body.classList.toggle(
-        "dark-mode",
-        selectedTheme === "dark"
+  </footer>
+  <!-- MOBILE MENU -->
+  <script>
+    const menuButton = document.querySelector(".mobile-menu-button");
+    const navLinks = document.querySelector(".nav-links");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("menu-open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
       );
-
-      localStorage.setItem("worthy-finds-theme", selectedTheme);
-
-      themeOptions.forEach(item => {
-        item.classList.toggle("active", item === option);
+    });
+  </script>
+  <!-- THEME -->
+  <script>
+    const themeOptions = document.querySelectorAll(".theme-option");
+    const savedTheme = localStorage.getItem("worthy-finds-theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+    themeOptions.forEach(option => {
+      option.classList.toggle(
+        "active",
+        option.dataset.theme === (savedTheme || "light")
+      );
+      option.addEventListener("click", () => {
+        const selectedTheme = option.dataset.theme;
+        document.body.classList.toggle(
+          "dark-mode",
+          selectedTheme === "dark"
+        );
+        localStorage.setItem(
+          "worthy-finds-theme",
+          selectedTheme
+        );
+        themeOptions.forEach(item => {
+          item.classList.toggle(
+            "active",
+            item === option
+          );
+        });
       });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
