@@ -1069,7 +1069,7 @@
     const themeOptions = document.querySelectorAll(".theme-option");
 
     const savedTheme =
-      localStorage.getItem("worthy-finds-theme");
+  localStorage.getItem("worthy-finds-theme") || "light";
 
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
