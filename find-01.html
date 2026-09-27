@@ -878,10 +878,12 @@ nav {
     });
   });
 </script>;
-
+      themeOptions.forEach(item => {
+        item.classList.toggle("active", item === option);
       });
     });
   });
 </script>
+
 </body>
 </html>
