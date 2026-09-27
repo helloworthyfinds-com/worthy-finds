@@ -211,6 +211,12 @@ body.dark-mode {
   <footer>
     © 2026 Worthy Finds
   </footer>
+<script>
+  const savedTheme = localStorage.getItem("worthy-finds-theme");
 
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+</script>
 </body>
 </html>
