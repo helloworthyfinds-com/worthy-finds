@@ -8,31 +8,19 @@
 
   <meta name="description" content="Worthy Finds is a curated collection of useful, beautiful and clever things worth discovering.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
   <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
-
     :root {
-      --cream: #f4f1eb;
-      --paper: #fbfaf7;
-      --ink: #151515;
-      --soft: #77736d;
-      --line: #dedad2;
-      --accent: #8a755f;
+      --cream: #f5f2eb;
+      --paper: #faf9f5;
+      --ink: #181816;
+      --muted: #77736b;
+      --line: #ddd9d0;
       --dark: #171715;
-    }
-
-    body.dark-mode {
-      --cream: #171715;
-      --paper: #1d1d1a;
-      --ink: #f3f0e8;
-      --soft: #a7a39a;
-      --line: #35342f;
-      --accent: #b09a80;
-      --dark: #11110f;
-
-      background: var(--paper);
-      color: var(--ink);
     }
 
     * {
@@ -46,11 +34,24 @@
     }
 
     body {
-      background: var(--paper);
+      background: var(--cream);
       color: var(--ink);
-      font-family: "DM Sans", Arial, sans-serif;
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
       transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    body.dark-mode {
+      --cream: #171715;
+      --paper: #1d1d1a;
+      --ink: #f3f0e8;
+      --muted: #a7a39a;
+      --line: #35342f;
+      --dark: #11110f;
+
+      background: var(--cream);
+      color: var(--ink);
     }
 
     a {
@@ -58,38 +59,32 @@
       text-decoration: none;
     }
 
-    /* ---------------- HEADER ---------------- */
 
-    header {
-      position: fixed;
+    /* ---------------- NAVIGATION ---------------- */
+
+    nav {
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 50;
-      background: color-mix(in srgb, var(--paper) 86%, transparent);
-      backdrop-filter: blur(18px);
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: color-mix(in srgb, var(--cream) 90%, transparent);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
       transition: background 0.25s ease, border-color 0.25s ease;
     }
 
-    .nav {
-      height: 76px;
-      max-width: 1350px;
-      margin: auto;
-      padding: 0 35px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 25px;
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
       letter-spacing: -0.5px;
     }
 
-    .brand span {
+    .logo em {
       font-style: italic;
+      font-weight: 400;
     }
 
     .theme-switch {
@@ -97,14 +92,14 @@
       align-items: center;
       gap: 7px;
       margin-left: auto;
-      margin-right: 35px;
+      margin-right: 32px;
       font-size: 10px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
     .theme-switch span {
-      color: var(--soft);
+      color: var(--muted);
     }
 
     .theme-option {
@@ -130,31 +125,18 @@
 
     .nav-links {
       display: flex;
-      gap: 35px;
-      font-size: 11px;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
+      gap: 28px;
+      font-size: 13px;
     }
 
     .nav-links a {
-      position: relative;
-      padding-bottom: 5px;
+      transition: opacity 0.2s ease;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--ink);
-      transition: width 0.3s ease;
+    .nav-links a:hover {
+      opacity: 0.55;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
 
     /* ---------------- CATEGORY MENU ---------------- */
 
@@ -166,7 +148,6 @@
       list-style: none;
       cursor: pointer;
       position: relative;
-      padding-bottom: 5px;
     }
 
     .category-menu summary::-webkit-details-marker {
@@ -174,15 +155,15 @@
     }
 
     .category-menu summary::after {
-      content: "▼";
+      content: "▾";
       display: inline-block;
       margin-left: 5px;
-      font-size: 7px;
+      font-size: 9px;
     }
 
     .category-dropdown {
       position: absolute;
-      top: 30px;
+      top: 28px;
       right: -15px;
       width: 180px;
       padding: 8px 0;
@@ -196,26 +177,21 @@
       display: block;
       padding: 13px 18px;
       color: var(--ink);
-      text-decoration: none;
-      font-family: "DM Sans", Arial, sans-serif;
       font-size: 11px;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-    }
-
-    .category-dropdown a::after {
-      display: none;
     }
 
     .category-dropdown a:hover {
       background: var(--cream);
     }
 
+
     /* ---------------- HERO ---------------- */
 
     .hero {
       min-height: 100vh;
-      padding: 150px 35px 70px;
+      padding: 105px 5vw 70px;
       display: flex;
       align-items: center;
     }
@@ -241,12 +217,12 @@
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--muted);
       margin-bottom: 28px;
     }
 
     .hero h1 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-weight: 400;
       font-size: clamp(60px, 7vw, 105px);
       line-height: 0.91;
@@ -260,7 +236,7 @@
 
     .hero-description {
       max-width: 390px;
-      color: var(--soft);
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.9;
       margin-top: 35px;
@@ -279,6 +255,7 @@
     .hero-image {
       position: relative;
       overflow: hidden;
+      min-width: 0;
       background:
         url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=90")
         center/cover;
@@ -306,6 +283,7 @@
       text-transform: uppercase;
     }
 
+
     /* ---------------- INTRO ---------------- */
 
     .intro {
@@ -318,12 +296,12 @@
     .intro-label {
       font-size: 10px;
       letter-spacing: 3px;
-      color: var(--accent);
+      color: var(--muted);
       text-transform: uppercase;
     }
 
     .intro h2 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-weight: 400;
       font-size: clamp(42px, 6vw, 72px);
       line-height: 1.08;
@@ -334,10 +312,11 @@
     .intro p {
       max-width: 570px;
       margin: 30px auto 0;
-      color: var(--soft);
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.9;
     }
+
 
     /* ---------------- FEATURE ---------------- */
 
@@ -355,7 +334,7 @@
     }
 
     .feature-top h2 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: 43px;
       font-weight: 400;
       letter-spacing: -1px;
@@ -365,7 +344,7 @@
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--soft);
+      color: var(--muted);
     }
 
     .feature-card {
@@ -373,15 +352,19 @@
       grid-template-columns: 1.25fr 0.75fr;
       min-height: 600px;
       background: var(--cream);
+      overflow: hidden;
     }
 
     .feature-image {
+      min-width: 0;
+      min-height: 600px;
       background:
         url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=90")
         center/cover;
     }
 
     .feature-copy {
+      min-width: 0;
       padding: 60px;
       display: flex;
       flex-direction: column;
@@ -389,7 +372,7 @@
     }
 
     .feature-category {
-      color: var(--accent);
+      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 10px;
@@ -397,7 +380,7 @@
     }
 
     .feature-copy h3 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: 47px;
       font-weight: 400;
       line-height: 1.08;
@@ -405,7 +388,7 @@
     }
 
     .feature-copy p {
-      color: var(--soft);
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.9;
       margin-top: 25px;
@@ -420,6 +403,7 @@
       border-bottom: 1px solid var(--ink);
       padding-bottom: 8px;
     }
+
 
     /* ---------------- CATEGORIES ---------------- */
 
@@ -449,7 +433,7 @@
     }
 
     .categories-header h2 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: 55px;
       font-weight: 400;
     }
@@ -473,7 +457,7 @@
     }
 
     .category-name {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: 35px;
       font-weight: 400;
     }
@@ -483,6 +467,7 @@
       font-size: 10px;
       letter-spacing: 2px;
     }
+
 
     /* ---------------- STATEMENT ---------------- */
 
@@ -494,7 +479,7 @@
     }
 
     .statement h2 {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: clamp(45px, 6vw, 75px);
       line-height: 1.08;
       font-weight: 400;
@@ -506,12 +491,13 @@
     }
 
     .statement p {
-      color: var(--soft);
+      color: var(--muted);
       max-width: 550px;
       margin: 30px auto 0;
       line-height: 1.9;
       font-size: 14px;
     }
+
 
     /* ---------------- FOOTER ---------------- */
 
@@ -527,7 +513,7 @@
     }
 
     .footer-brand {
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: "Playfair Display", serif;
       font-size: 32px;
       color: white;
       margin-bottom: 60px;
@@ -548,13 +534,15 @@
       gap: 25px;
     }
 
+
+    /* ---------------- MOBILE MENU ---------------- */
+
     .mobile-menu-button {
       display: none;
     }
 
-    /* ---------------- MOBILE ---------------- */
+    @media (max-width: 700px) {
 
-  .theme-switch {
       .mobile-menu-button {
         display: block;
         width: 34px;
@@ -586,13 +574,8 @@
         transform: translateY(-6px) rotate(-45deg);
       }
 
-      .nav {
-        height: 65px;
-        padding: 0 20px;
-      }
-
-      .brand {
-        font-size: 22px;
+      nav {
+        padding: 18px 6vw;
       }
 
       .nav-links {
@@ -601,7 +584,7 @@
         top: 65px;
         left: 0;
         right: 0;
-        background: color-mix(in srgb, var(--paper) 98%, transparent);
+        background: color-mix(in srgb, var(--cream) 96%, transparent);
         backdrop-filter: blur(18px);
         border-top: 1px solid var(--line);
         padding: 30px 25px 35px;
@@ -623,10 +606,6 @@
         pointer-events: auto;
       }
 
-      .category-menu {
-        width: 100%;
-      }
-
       .nav-links > a,
       .category-menu > summary {
         display: block;
@@ -639,6 +618,10 @@
       .nav-links > a:active,
       .category-menu > summary:active {
         padding-left: 6px;
+      }
+
+      .category-menu {
+        width: 100%;
       }
 
       .category-menu > summary::after {
@@ -666,8 +649,12 @@
         background: transparent;
       }
 
+
+      /* HERO */
+
       .hero {
-        padding: 95px 15px 20px;
+        min-height: auto;
+        padding: 80px 15px 20px;
       }
 
       .hero-grid {
@@ -690,7 +677,11 @@
 
       .hero-image {
         min-height: 470px;
+        width: 100%;
       }
+
+
+      /* INTRO */
 
       .intro {
         padding: 100px 25px;
@@ -699,6 +690,9 @@
       .intro h2 {
         font-size: 45px;
       }
+
+
+      /* FEATURE */
 
       .feature {
         padding: 0 15px 100px;
@@ -715,19 +709,25 @@
 
       .feature-card {
         grid-template-columns: 1fr;
+        width: 100%;
       }
 
       .feature-image {
+        width: 100%;
         min-height: 390px;
       }
 
       .feature-copy {
+        width: 100%;
         padding: 45px 28px 55px;
       }
 
       .feature-copy h3 {
         font-size: 38px;
       }
+
+
+      /* CATEGORIES */
 
       .categories {
         padding: 100px 25px;
@@ -746,6 +746,9 @@
         font-size: 29px;
       }
 
+
+      /* STATEMENT */
+
       .statement {
         padding: 110px 25px;
       }
@@ -753,6 +756,9 @@
       .statement h2 {
         font-size: 46px;
       }
+
+
+      /* FOOTER */
 
       footer {
         padding: 60px 25px 30px;
@@ -767,6 +773,7 @@
         flex-wrap: wrap;
         gap: 15px;
       }
+
     }
 
   </style>
@@ -776,58 +783,59 @@
 
   <!-- NAVIGATION -->
 
-  <header>
+  <nav>
 
-    <nav class="nav">
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
 
-      <a href="#" class="brand">
-        Worthy <span>Finds</span>
-      </a>
+    <div class="theme-switch" aria-label="Theme switch">
 
-      <div class="theme-switch" aria-label="Theme switch">
-
-        <button type="button" class="theme-option active" data-theme="light">
-          Light
-        </button>
-
-        <span>·</span>
-
-        <button type="button" class="theme-option" data-theme="dark">
-          Dark
-        </button>
-
-      </div>
-
-      <button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button type="button" class="theme-option active" data-theme="light">
+        Light
       </button>
 
-      <div class="nav-links">
+      <span>·</span>
 
-        <a href="#finds">Finds</a>
+      <button type="button" class="theme-option" data-theme="dark">
+        Dark
+      </button>
 
-        <details class="category-menu">
+    </div>
 
-          <summary>Categories</summary>
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-          <div class="category-dropdown">
-            <a href="kitchen.html">Kitchen 01</a>
-            <a href="home.html">Home 02</a>
-            <a href="gadgets.html">Gadgets 03</a>
-            <a href="style.html">Style 04</a>
-          </div>
+    <div class="nav-links">
 
-        </details>
+      <a href="index.html">Finds</a>
 
-        <a href="story.html">Our Story</a>
+      <details class="category-menu">
 
-      </div>
+        <summary>Categories</summary>
 
-    </nav>
+        <div class="category-dropdown">
+          <a href="kitchen.html">Kitchen 01</a>
+          <a href="home.html">Home 02</a>
+          <a href="gadgets.html">Gadgets 03</a>
+          <a href="style.html">Style 04</a>
+        </div>
 
-  </header>
+      </details>
+
+      <a href="story.html">Our Story</a>
+
+    </div>
+
+  </nav>
 
 
   <main>
@@ -910,7 +918,6 @@
 
       </div>
 
-
       <article class="feature-card">
 
         <div class="feature-image"></div>
@@ -955,7 +962,6 @@
           </div>
 
         </div>
-
 
         <div class="category-list">
 
@@ -1064,7 +1070,7 @@
     const themeOptions = document.querySelectorAll(".theme-option");
 
     const savedTheme =
-  localStorage.getItem("worthy-finds-theme") || "light";
+      localStorage.getItem("worthy-finds-theme");
 
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
