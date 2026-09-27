@@ -880,12 +880,6 @@ nav {
 </script>;
 
   themeOptions.forEach(option => {
-    option.addEventListener("click", () => {
-      const selectedTheme = option.dataset.theme;
-
-      document.body.classList.toggle("dark-mode", selectedTheme === "dark");
-
-      themeOptions.forEach(item => {
         item.classList.toggle("active", item === option);
       });
     });
