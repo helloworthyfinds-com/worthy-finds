@@ -32,16 +32,18 @@
       font-family: "DM Sans", sans-serif;
       line-height: 1.6;
     }
-body.dark-mode {
-  --cream: #171715;
-  --paper: #1d1d1a;
-  --ink: #f3f0e8;
-  --muted: #a7a39a;
-  --line: #35342f;
-  --dark: #11110f;
-  background: var(--cream);
-  color: var(--ink);
-}
+
+    body.dark-mode {
+      --cream: #171715;
+      --paper: #1d1d1a;
+      --ink: #f3f0e8;
+      --muted: #a7a39a;
+      --line: #35342f;
+      --dark: #11110f;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -50,18 +52,17 @@ body.dark-mode {
     /* NAVIGATION */
 
     nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 5vw;
-  background: color-mix(in srgb, var(--cream) 90%, transparent);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: color-mix(in srgb, var(--cream) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
 
     .logo {
       font-family: "Playfair Display", serif;
@@ -73,101 +74,105 @@ body.dark-mode {
       font-style: italic;
       font-weight: 400;
     }
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: auto;
-  margin-right: 32px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
 
-.theme-switch span {
-  color: var(--muted);
-}
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: auto;
+      margin-right: 32px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
 
-.theme-option {
-  border: none;
-  background: transparent;
-  padding: 4px 0;
-  color: var(--ink);
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  cursor: pointer;
-  opacity: 0.45;
-  transition: opacity 0.2s ease;
-}
+    .theme-switch span {
+      color: var(--muted);
+    }
 
-.theme-option.active {
-  opacity: 1;
-}
+    .theme-option {
+      border: none;
+      background: transparent;
+      padding: 4px 0;
+      color: var(--ink);
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      cursor: pointer;
+      opacity: 0.45;
+      transition: opacity 0.2s ease;
+    }
 
-.theme-option:hover {
-  opacity: 0.75;
-}
+    .theme-option.active {
+      opacity: 1;
+    }
 
-.theme-option:hover {
-  color: var(--ink);
-}
+    .theme-option:hover {
+      opacity: 0.75;
+    }
+
     .nav-links {
       display: flex;
       gap: 28px;
       font-size: 13px;
     }
-.category-menu {
-  position: relative;
-}
 
-.category-menu summary {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.category-menu summary::-webkit-details-marker {
-  display: none;
-}
-
-.category-menu summary::after {
-  content: "▾";
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 9px;
-}
-
-.category-dropdown {
-  position: absolute;
-  top: 28px;
-  right: -15px;
-  width: 180px;
-  padding: 8px 0;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
-  z-index: 100;
-}
-
-.category-dropdown a {
-  display: block;
-  padding: 13px 18px;
-  color: var(--ink);
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-.category-dropdown a:hover {
-  background: var(--cream);
-}
     .nav-links a {
       transition: opacity 0.2s ease;
     }
 
     .nav-links a:hover {
       opacity: 0.55;
+    }
+
+    .category-menu {
+      position: relative;
+    }
+
+    .category-menu summary {
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .category-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-menu summary::after {
+      content: "▾";
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 9px;
+    }
+
+    .category-dropdown {
+      position: absolute;
+      top: 28px;
+      right: -15px;
+      width: 180px;
+      padding: 8px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+      z-index: 100;
+    }
+
+    .category-dropdown a {
+      display: block;
+      padding: 13px 18px;
+      color: var(--ink);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .category-dropdown a:hover {
+      background: var(--cream);
+    }
+
+    .mobile-menu-button {
+      display: none;
     }
 
     /* HERO */
@@ -192,20 +197,26 @@ body.dark-mode {
       font-size: clamp(52px, 8vw, 105px);
       line-height: 0.95;
       letter-spacing: -4px;
-      max-width: 850px;
+      max-width: 900px;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 400;
     }
 
     .hero-copy {
       margin-top: 35px;
-      max-width: 540px;
+      max-width: 570px;
       font-size: 17px;
-      color: #555149;
+      color: var(--muted);
     }
 
-    /* FEATURED INTRO */
+    /* INTRO */
 
     .intro {
       border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       padding: 35px 5vw;
       display: flex;
       justify-content: space-between;
@@ -222,154 +233,190 @@ body.dark-mode {
     }
 
     .intro-text {
-      max-width: 600px;
+      max-width: 650px;
       font-family: "Playfair Display", serif;
       font-size: 25px;
       line-height: 1.35;
     }
 
-    /* COLLECTION */
-
-    .collection {
-      padding: 80px 5vw 120px;
-      max-width: 1250px;
-      margin: auto;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 46px;
-      font-weight: 400;
-      letter-spacing: -1.5px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* PRODUCT GRID */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 60px 28px;
-    }
-
-    .find {
-      display: block;
-    }
-
-    .image {
-      height: 500px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-   .find-number {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: color-mix(in srgb, var(--paper) 90%, transparent);
-  color: var(--ink);
-  padding: 8px 12px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-    .find-info {
-      padding-top: 19px;
-    }
-
-    .category {
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      font-size: 10px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .find-title {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      line-height: 1.15;
-      margin-bottom: 9px;
-    }
-
-    .find-description {
-      color: #666159;
-      font-size: 14px;
-      max-width: 470px;
-    }
-
-    .discover {
-      display: inline-block;
-      margin-top: 16px;
-      font-size: 12px;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 3px;
-    }
-
     /* FEATURED FIND */
 
-    .featured {
-      margin-top: 120px;
-      background: var(--dark);
-      color: white;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 600px;
+    .featured-find {
+      max-width: 1250px;
+      margin: 90px auto 0;
+      padding: 0 5vw;
     }
 
-.featured-image {
-  background-image: url("https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400");
-  background-size: cover;
-  background-position: center;
-  min-height: 600px;
-}
-
-    .featured-content {
-      padding: 70px;
+    .featured-label {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
     }
 
-    .featured-content .eyebrow {
-      color: #aaa69d;
+    .featured-label span {
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 10px;
+      color: var(--muted);
     }
 
-    .featured-content h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 52px;
-      line-height: 1;
-      font-weight: 400;
-      letter-spacing: -1.5px;
+    .product-card {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 55px 0;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+    }
+
+    .product-number {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
       margin-bottom: 25px;
     }
 
-    .featured-content p {
-      color: #bbb7af;
-      max-width: 430px;
-      font-size: 15px;
+    .product-category {
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 12px;
     }
 
-    .featured-link {
+    .product-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.02;
+      font-weight: 400;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .product-intro {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .product-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
       margin-top: 35px;
-      font-size: 12px;
-      border-bottom: 1px solid #aaa69d;
-      padding-bottom: 5px;
-      width: fit-content;
+    }
+
+    .detail {
+      padding: 17px 20px 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail:nth-child(even) {
+      padding-left: 20px;
+      border-left: 1px solid var(--line);
+    }
+
+    .detail-label {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 9px;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      font-size: 13px;
+    }
+
+    .product-action {
+      margin-top: 35px;
+    }
+
+    .amazon-link {
+      display: inline-block;
+      background: var(--dark);
+      color: #fff;
+      padding: 15px 23px;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      transition: opacity 0.2s ease;
+    }
+
+    .amazon-link:hover {
+      opacity: 0.78;
+    }
+
+    .affiliate-note {
+      margin-top: 13px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* WHY IT'S HERE */
+
+    .why {
+      max-width: 1250px;
+      margin: 100px auto 0;
+      padding: 0 5vw;
+    }
+
+    .why-grid {
+      border-top: 1px solid var(--line);
+      padding-top: 45px;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 70px;
+    }
+
+    .why-label {
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .why-content {
+      max-width: 680px;
+    }
+
+    .why-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+    }
+
+    .why-content p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .why-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* BOTTOM STATEMENT */
+
+    .statement {
+      margin: 120px 5vw 0;
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .statement p {
+      max-width: 720px;
+      margin: auto;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
     }
 
     /* FOOTER */
@@ -405,43 +452,7 @@ body.dark-mode {
       color: var(--muted);
       font-size: 11px;
     }
-.mobile-menu-button {
-  display: none;
-}
 
-@media (max-width: 700px) {
-
-  .mobile-menu-button {
-    display: block;
-    width: 34px;
-    height: 34px;
-    padding: 7px 4px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .mobile-menu-button span {
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--ink);
-    margin: 5px auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-}
     /* MOBILE */
 
     @media (max-width: 700px) {
@@ -450,75 +461,100 @@ body.dark-mode {
         padding: 18px 6vw;
       }
 
-  .nav-links {
-  display: flex;
-  position: fixed;
-  top: 65px;
-  left: 0;
-  right: 0;
-background: color-mix(in srgb, var(--cream) 96%, transparent);
-  backdrop-filter: blur(18px);
-  border-top: 1px solid var(--line);
-  padding: 30px 25px 35px;
-  flex-direction: column;
-  gap: 0;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+      .mobile-menu-button {
+        display: block;
+        width: 34px;
+        height: 34px;
+        padding: 7px 4px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
 
-  opacity: 0;
-  transform: translateY(-8px);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
+      .mobile-menu-button span {
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--ink);
+        margin: 5px auto;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
 
-.nav-links.menu-open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.nav-links > a,
-.category-menu > summary {
-  display: block;
-  width: 100%;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
-  transition: padding-left 0.25s ease;
-}
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
 
-.nav-links > a:active,
-.category-menu > summary:active {
-  padding-left: 6px;
-}
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
 
-.category-menu {
-  width: 100%;
-}
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
 
-.category-menu > summary::after {
-  float: right;
-  margin-top: 2px;
-}
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: color-mix(in srgb, var(--cream) 96%, transparent);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid var(--line);
+        padding: 30px 25px 35px;
+        flex-direction: column;
+        gap: 0;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
 
-.category-dropdown {
-  position: static;
-  width: 100%;
-  padding: 4px 0 8px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
+      .nav-links.menu-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
 
-.category-dropdown a {
-  padding: 12px 0 12px 18px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  border-bottom: none;
-}
+      .nav-links > a,
+      .category-menu > summary {
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+      }
 
-.category-dropdown a:hover {
-  background: transparent;
-}
+      .category-menu {
+        width: 100%;
+      }
+
+      .category-menu > summary::after {
+        float: right;
+        margin-top: 2px;
+      }
+
+      .category-dropdown {
+        position: static;
+        width: 100%;
+        padding: 4px 0 8px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      .category-dropdown a {
+        padding: 12px 0 12px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+
+      .theme-switch {
+        margin-right: 15px;
+      }
+
       .hero {
         padding: 80px 6vw 70px;
       }
@@ -542,43 +578,62 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
         font-size: 22px;
       }
 
-      .collection {
-        padding: 65px 6vw 90px;
+      .featured-find {
+        margin-top: 70px;
+        padding: 0 6vw;
       }
 
-      .section-heading {
+      .featured-label {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+      }
+
+      .product-card {
         display: block;
+        padding: 40px 0;
       }
 
-      .section-heading h2 {
-        font-size: 38px;
-        margin-bottom: 10px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 55px;
-      }
-
-      .image {
-        height: 430px;
-      }
-
-      .featured {
-        display: block;
-        margin-top: 80px;
-      }
-
-      .featured-image {
-        min-height: 430px;
-      }
-
-      .featured-content {
-        padding: 55px 30px 65px;
-      }
-
-      .featured-content h2 {
+      .product-title {
         font-size: 43px;
+        letter-spacing: -1.5px;
+      }
+
+      .product-intro {
+        font-size: 14px;
+      }
+
+      .product-details {
+        grid-template-columns: 1fr;
+      }
+
+      .detail,
+      .detail:nth-child(even) {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .why {
+        margin-top: 75px;
+        padding: 0 6vw;
+      }
+
+      .why-grid {
+        display: block;
+        padding-top: 30px;
+      }
+
+      .why-content {
+        margin-top: 25px;
+      }
+
+      .why-content h2 {
+        font-size: 36px;
+      }
+
+      .statement {
+        margin: 80px 6vw 0;
+        padding: 55px 0;
       }
 
       .footer-top {
@@ -598,44 +653,62 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
 
   <!-- NAVIGATION -->
 
-<nav>
-  <a href="index.html" class="logo">
-  Worthy <em>Finds</em>
-</a>
-<div class="theme-switch" aria-label="Theme switch">
-  <button type="button" class="theme-option active" data-theme="light">
-    Light
-  </button>
-  <span>·</span>
-  <button type="button" class="theme-option" data-theme="dark">
-    Dark
-  </button>
-</div>
-<button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+  <nav>
 
-<div class="nav-links">
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
 
-    <a href="index.html">Finds</a>
+    <div class="theme-switch" aria-label="Theme switch">
 
-    <details class="category-menu">
-      <summary>Categories</summary>
+      <button type="button" class="theme-option active" data-theme="light">
+        Light
+      </button>
 
-      <div class="category-dropdown">
-        <a href="kitchen.html">Kitchen 01</a>
-        <a href="home.html">Home 02</a>
-        <a href="gadgets.html">Gadgets 03</a>
-        <a href="style.html">Style 04</a>
-      </div>
-    </details>
+      <span>·</span>
 
-    <a href="story.html">Our Story</a>
+      <button type="button" class="theme-option" data-theme="dark">
+        Dark
+      </button>
 
-  </div>
-</nav>
+    </div>
+
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+    <div class="nav-links">
+
+      <a href="index.html">Finds</a>
+
+      <details class="category-menu">
+
+        <summary>Categories</summary>
+
+        <div class="category-dropdown">
+
+          <a href="kitchen.html">Kitchen 01</a>
+          <a href="home.html">Home 02</a>
+          <a href="gadgets.html">Gadgets 03</a>
+          <a href="style.html">Style 04</a>
+
+        </div>
+
+      </details>
+
+      <a href="story.html">Our Story</a>
+
+    </div>
+
+  </nav>
 
 
   <!-- HERO -->
@@ -643,7 +716,7 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
   <header class="hero">
 
     <div class="eyebrow">
-      Kitchen / Worthy Finds
+      Kitchen 01 / Worthy Finds
     </div>
 
     <h1>
@@ -652,8 +725,8 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
     </h1>
 
     <p class="hero-copy">
-      Clever tools, small-space solutions and beautiful little discoveries
-      that make everyday kitchen life easier.
+      Useful discoveries for making everyday kitchen life
+      simpler, tidier and a little more considered.
     </p>
 
   </header>
@@ -669,210 +742,209 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
 
     <div class="intro-text">
       Not more things. Just better things.
-      The useful little finds that earn their place.
+      We look for useful products that solve real everyday problems.
     </div>
 
   </section>
 
 
-  <!-- COLLECTION -->
+  <!-- FEATURED FIND -->
 
- <main id="collection" class="collection">
+  <section class="featured-find">
 
-    <div class="section-heading">
-      <h2>Worth finding.</h2>
-      <p>A few of our current discoveries.</p>
-    </div>
+    <div class="featured-label">
 
+      <span>
+        Kitchen Find / 001
+      </span>
 
-    <div class="grid">
-
-      <!-- FIND 01 -->
-
-      <a href="find-01.html" class="find">
-
-        <div
-          class="image"
-          style="background-image: url('https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400');">
-
-          <div class="find-number">
-            01
-          </div>
-
-        </div>
-
-        <div class="find-info">
-
-          <div class="category">
-            Organization
-          </div>
-
-          <div class="find-title">
-            The overlooked-space solution
-          </div>
-
-          <p class="find-description">
-            When your kitchen is running out of room,
-            sometimes the answer is simply looking somewhere else.
-          </p>
-
-          <span class="discover">
-            Discover the find →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- FIND 02 -->
-
-      <a href="#" class="find">
-
-        <div
-          class="image"
-          style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85');">
-
-          <div class="find-number">
-            02
-          </div>
-
-        </div>
-
-        <div class="find-info">
-
-          <div class="category">
-            Cooking
-          </div>
-
-          <div class="find-title">
-            A smarter way to prep
-          </div>
-
-          <p class="find-description">
-            Small tools that quietly make the most annoying
-            parts of cooking much easier.
-          </p>
-
-          <span class="discover">
-            Discover the find →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- FIND 03 -->
-
-      <a href="#" class="find">
-
-        <div
-          class="image"
-          style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85');">
-
-          <div class="find-number">
-            03
-          </div>
-
-        </div>
-
-        <div class="find-info">
-
-          <div class="category">
-            Storage
-          </div>
-
-          <div class="find-title">
-            Make the most of the space you have
-          </div>
-
-          <p class="find-description">
-            Practical discoveries for crowded counters,
-            messy cabinets and kitchens that need a little help.
-          </p>
-
-          <span class="discover">
-            Discover the find →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- FIND 04 -->
-
-      <a href="#" class="find">
-
-        <div
-          class="image"
-          style="background-image: url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1200&q=85');">
-
-          <div class="find-number">
-            04
-          </div>
-
-        </div>
-
-        <div class="find-info">
-
-          <div class="category">
-            Everyday
-          </div>
-
-          <div class="find-title">
-            Things you use more than you expect
-          </div>
-
-          <p class="find-description">
-            Simple kitchen discoveries that become part
-            of your routine before you even notice.
-          </p>
-
-          <span class="discover">
-            Discover the find →
-          </span>
-
-        </div>
-
-      </a>
+      <span>
+        Organization
+      </span>
 
     </div>
 
 
-    <!-- FEATURED -->
+    <article class="product-card">
 
-    <section class="featured">
+      <div>
 
-      <div class="featured-image"></div>
-
-      <div class="featured-content">
-
-        <div class="eyebrow">
-          Worth finding
+        <div class="product-number">
+          001
         </div>
 
-        <h2>
-          Your kitchen
-          can work harder.
+        <div class="product-category">
+          Kitchen Organization
+        </div>
+
+        <h2 class="product-title">
+          The rack that gives your counter back.
         </h2>
 
-        <p>
-          The right little changes can make a surprisingly
-          big difference. We look for the ones actually
-          worth making.
+        <p class="product-intro">
+          A dish-drying rack designed to make use of the space
+          around your sink instead of taking over your counter.
+          For smaller or crowded kitchens, that can make a
+          surprisingly useful difference.
         </p>
 
-      <a href="#collection" class="featured-link">
-  Explore the kitchen edit →
-</a>
+        <div class="product-action">
+
+          <!-- Replace the # below with your Amazon Associates link -->
+
+          <a href="#" class="amazon-link" target="_blank" rel="noopener noreferrer">
+            See it on Amazon →
+          </a>
+
+          <p class="affiliate-note">
+            As an Amazon Associate, Worthy Finds may earn from qualifying purchases.
+          </p>
+
+        </div>
 
       </div>
 
-    </section>
 
-  </main>
+      <div>
+
+        <div class="product-details">
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Product
+            </span>
+
+            <span class="detail-value">
+              JASIWAY Dish Drying Rack
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Material
+            </span>
+
+            <span class="detail-value">
+              Stainless steel
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Dimensions
+            </span>
+
+            <span class="detail-value">
+              15.5" D × 11" W × 4.8" H
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Design
+            </span>
+
+            <span class="detail-value">
+              Expandable / adjustable
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Included
+            </span>
+
+            <span class="detail-value">
+              Cup & utensil holder
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Amazon ASIN
+            </span>
+
+            <span class="detail-value">
+              B0C6D6SH16
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- WHY IT'S HERE -->
+
+  <section class="why">
+
+    <div class="why-grid">
+
+      <div class="why-label">
+        Why we found it
+      </div>
+
+      <div class="why-content">
+
+        <h2>
+          Sometimes the problem
+          isn't the size of your kitchen.
+        </h2>
+
+        <p>
+          It's where you're using the space.
+        </p>
+
+        <p>
+          A traditional dish rack can occupy valuable counter
+          space. This design is made to sit over the sink,
+          creating a dedicated place for dishes while leaving
+          more of the surrounding counter available.
+        </p>
+
+        <p>
+          We like finds that solve a specific problem without
+          asking you to completely change the way your kitchen works.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BOTTOM STATEMENT -->
+
+  <section class="statement">
+
+    <p>
+      Useful should also feel
+      <em>worth finding.</em>
+    </p>
+
+  </section>
 
 
   <!-- FOOTER -->
@@ -886,10 +958,12 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
       </div>
 
       <div class="footer-links">
+
         <a href="kitchen.html">Kitchen</a>
-       <a href="privacy.html">Privacy</a>
+        <a href="privacy.html">Privacy</a>
         <a href="disclosure.html">Disclosure</a>
         <a href="contact.html">Contact</a>
+
       </div>
 
     </div>
@@ -900,45 +974,83 @@ background: color-mix(in srgb, var(--cream) 96%, transparent);
 
   </footer>
 
-<script>
-  const menuButton = document.querySelector(".mobile-menu-button");
-  const navLinks = document.querySelector(".nav-links");
 
-  menuButton.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("menu-open");
-    menuButton.setAttribute("aria-expanded", isOpen);
-  });
-</script>
-<script>
-  const themeOptions = document.querySelectorAll(".theme-option");
+  <!-- MOBILE MENU -->
 
-  const savedTheme = localStorage.getItem("worthy-finds-theme");
+  <script>
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
+    const menuButton =
+      document.querySelector(".mobile-menu-button");
 
-  themeOptions.forEach(option => {
-    option.classList.toggle(
-      "active",
-      option.dataset.theme === (savedTheme || "light")
-    );
+    const navLinks =
+      document.querySelector(".nav-links");
 
-    option.addEventListener("click", () => {
-      const selectedTheme = option.dataset.theme;
+    menuButton.addEventListener("click", () => {
 
-      document.body.classList.toggle(
-        "dark-mode",
-        selectedTheme === "dark"
+      const isOpen =
+        navLinks.classList.toggle("menu-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
       );
 
-      localStorage.setItem("worthy-finds-theme", selectedTheme);
-
-      themeOptions.forEach(item => {
-        item.classList.toggle("active", item === option);
-      });
     });
-  });
-</script>
+
+  </script>
+
+
+  <!-- THEME SWITCH -->
+
+  <script>
+
+    const themeOptions =
+      document.querySelectorAll(".theme-option");
+
+    const savedTheme =
+      localStorage.getItem("worthy-finds-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    themeOptions.forEach(option => {
+
+      option.classList.toggle(
+        "active",
+        option.dataset.theme ===
+        (savedTheme || "light")
+      );
+
+      option.addEventListener("click", () => {
+
+        const selectedTheme =
+          option.dataset.theme;
+
+        document.body.classList.toggle(
+          "dark-mode",
+          selectedTheme === "dark"
+        );
+
+        localStorage.setItem(
+          "worthy-finds-theme",
+          selectedTheme
+        );
+
+        themeOptions.forEach(item => {
+
+          item.classList.toggle(
+            "active",
+            item === option
+          );
+
+        });
+
+      });
+
+    });
+
+  </script>
+
 </body>
 </html>
