@@ -252,14 +252,38 @@
       text-transform: uppercase;
     }
 
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-      min-width: 0;
-      background:
-  url("https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400")
-  center/cover;
-    }
+   .hero-image {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image::before {
+  content: "WORTHY\A FINDS";
+  white-space: pre;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(55px, 7vw, 100px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  color: #f5f2eb;
+}
+
+.hero-image::after {
+  content: "USEFUL · BEAUTIFUL · CLEVER";
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: #9a968f;
+}
 
     .hero-image::after {
       content: "";
