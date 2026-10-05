@@ -171,10 +171,6 @@
       background: var(--cream);
     }
 
-    .mobile-menu-button {
-      display: none;
-    }
-
     /* HERO */
 
     .hero {
@@ -197,17 +193,16 @@
       font-size: clamp(52px, 8vw, 105px);
       line-height: 0.95;
       letter-spacing: -4px;
-      max-width: 900px;
+      max-width: 850px;
     }
 
     h1 em {
       font-style: italic;
-      font-weight: 400;
     }
 
     .hero-copy {
       margin-top: 35px;
-      max-width: 570px;
+      max-width: 540px;
       font-size: 17px;
       color: var(--muted);
     }
@@ -216,7 +211,6 @@
 
     .intro {
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
       padding: 35px 5vw;
       display: flex;
       justify-content: space-between;
@@ -233,190 +227,153 @@
     }
 
     .intro-text {
-      max-width: 650px;
+      max-width: 600px;
       font-family: "Playfair Display", serif;
       font-size: 25px;
       line-height: 1.35;
     }
 
-    /* FEATURED FIND */
+    /* COLLECTION */
 
-    .featured-find {
+    .collection {
+      padding: 80px 5vw 120px;
       max-width: 1250px;
-      margin: 90px auto 0;
-      padding: 0 5vw;
+      margin: auto;
     }
 
-    .featured-label {
+    .section-heading {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 28px;
+      align-items: end;
+      margin-bottom: 45px;
     }
 
-    .featured-label span {
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .product-card {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 55px 0;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 80px;
-    }
-
-    .product-number {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .product-category {
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 10px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .product-title {
+    .section-heading h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.02;
+      font-size: 46px;
       font-weight: 400;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
+      letter-spacing: -1.5px;
     }
 
-    .product-intro {
-      max-width: 510px;
+    .section-heading p {
       color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
-
-    .product-details {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--line);
-      margin-top: 35px;
-    }
-
-    .detail {
-      padding: 17px 20px 17px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .detail:nth-child(even) {
-      padding-left: 20px;
-      border-left: 1px solid var(--line);
-    }
-
-    .detail-label {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-size: 9px;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
-
-    .detail-value {
       font-size: 13px;
     }
 
-    .product-action {
-      margin-top: 35px;
-    }
+    /* PRODUCT GRID */
 
-    .amazon-link {
-      display: inline-block;
-      background: var(--dark);
-      color: #fff;
-      padding: 15px 23px;
-      font-size: 11px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease;
-    }
-
-    .amazon-link:hover {
-      opacity: 0.78;
-    }
-
-    .affiliate-note {
-      margin-top: 13px;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    /* WHY IT'S HERE */
-
-    .why {
-      max-width: 1250px;
-      margin: 100px auto 0;
-      padding: 0 5vw;
-    }
-
-    .why-grid {
-      border-top: 1px solid var(--line);
-      padding-top: 45px;
+    .grid {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 70px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 28px;
     }
 
-    .why-label {
+    .find {
+      display: block;
+    }
+
+    .image {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .find-number {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: color-mix(in srgb, var(--paper) 90%, transparent);
+      color: var(--ink);
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .find-info {
+      padding-top: 19px;
+    }
+
+    .category {
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.6px;
       font-size: 10px;
       color: var(--muted);
+      margin-bottom: 8px;
     }
 
-    .why-content {
-      max-width: 680px;
-    }
-
-    .why-content h2 {
+    .find-title {
       font-family: "Playfair Display", serif;
-      font-size: 42px;
-      line-height: 1.05;
+      font-size: 27px;
+      line-height: 1.15;
+      margin-bottom: 9px;
+    }
+
+    .find-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 470px;
+    }
+
+    .discover {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 12px;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 3px;
+    }
+
+    /* FEATURED */
+
+    .featured {
+      margin-top: 120px;
+      background: var(--dark);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 600px;
+    }
+
+    .featured-image {
+      background-image: url("https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400");
+      background-size: cover;
+      background-position: center;
+      min-height: 600px;
+    }
+
+    .featured-content {
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-content .eyebrow {
+      color: #aaa69d;
+    }
+
+    .featured-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      line-height: 1;
       font-weight: 400;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
       margin-bottom: 25px;
     }
 
-    .why-content p {
-      color: var(--muted);
+    .featured-content p {
+      color: #bbb7af;
+      max-width: 430px;
       font-size: 15px;
-      margin-bottom: 18px;
     }
 
-    .why-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* BOTTOM STATEMENT */
-
-    .statement {
-      margin: 120px 5vw 0;
-      padding: 70px 0;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .statement p {
-      max-width: 720px;
-      margin: auto;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.15;
+    .featured-link {
+      margin-top: 35px;
+      font-size: 12px;
+      border-bottom: 1px solid #aaa69d;
+      padding-bottom: 5px;
+      width: fit-content;
     }
 
     /* FOOTER */
@@ -451,6 +408,10 @@
     .copyright {
       color: var(--muted);
       font-size: 11px;
+    }
+
+    .mobile-menu-button {
+      display: none;
     }
 
     /* MOBILE */
@@ -578,62 +539,43 @@
         font-size: 22px;
       }
 
-      .featured-find {
-        margin-top: 70px;
-        padding: 0 6vw;
+      .collection {
+        padding: 65px 6vw 90px;
       }
 
-      .featured-label {
-        align-items: flex-start;
-        gap: 10px;
-        flex-direction: column;
-      }
-
-      .product-card {
+      .section-heading {
         display: block;
-        padding: 40px 0;
       }
 
-      .product-title {
-        font-size: 43px;
-        letter-spacing: -1.5px;
+      .section-heading h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
       }
 
-      .product-intro {
-        font-size: 14px;
-      }
-
-      .product-details {
+      .grid {
         grid-template-columns: 1fr;
+        gap: 55px;
       }
 
-      .detail,
-      .detail:nth-child(even) {
-        padding-left: 0;
-        border-left: none;
+      .image {
+        height: 430px;
       }
 
-      .why {
-        margin-top: 75px;
-        padding: 0 6vw;
-      }
-
-      .why-grid {
+      .featured {
         display: block;
-        padding-top: 30px;
+        margin-top: 80px;
       }
 
-      .why-content {
-        margin-top: 25px;
+      .featured-image {
+        min-height: 430px;
       }
 
-      .why-content h2 {
-        font-size: 36px;
+      .featured-content {
+        padding: 55px 30px 65px;
       }
 
-      .statement {
-        margin: 80px 6vw 0;
-        padding: 55px 0;
+      .featured-content h2 {
+        font-size: 43px;
       }
 
       .footer-top {
@@ -694,12 +636,10 @@
         <summary>Categories</summary>
 
         <div class="category-dropdown">
-
           <a href="kitchen.html">Kitchen 01</a>
           <a href="home.html">Home 02</a>
           <a href="gadgets.html">Gadgets 03</a>
           <a href="style.html">Style 04</a>
-
         </div>
 
       </details>
@@ -725,8 +665,8 @@
     </h1>
 
     <p class="hero-copy">
-      Useful discoveries for making everyday kitchen life
-      simpler, tidier and a little more considered.
+      Clever tools, small-space solutions and useful discoveries
+      that make everyday kitchen life easier.
     </p>
 
   </header>
@@ -742,209 +682,218 @@
 
     <div class="intro-text">
       Not more things. Just better things.
-      We look for useful products that solve real everyday problems.
+      The useful little finds that earn their place.
     </div>
 
   </section>
 
 
-  <!-- FEATURED FIND -->
+  <!-- COLLECTION -->
 
-  <section class="featured-find">
+  <main id="collection" class="collection">
 
-    <div class="featured-label">
+    <div class="section-heading">
 
-      <span>
-        Kitchen Find / 001
-      </span>
+      <h2>
+        Worth finding.
+      </h2>
 
-      <span>
-        Organization
-      </span>
+      <p>
+        A few of our current discoveries.
+      </p>
 
     </div>
 
 
-    <article class="product-card">
+    <div class="grid">
 
-      <div>
 
-        <div class="product-number">
-          001
+      <!-- FIND 01 -->
+
+      <a href="find-01.html" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400');">
+
+          <div class="find-number">
+            01
+          </div>
+
         </div>
 
-        <div class="product-category">
-          Kitchen Organization
-        </div>
+        <div class="find-info">
 
-        <h2 class="product-title">
-          The rack that gives your counter back.
-        </h2>
+          <div class="category">
+            Organization
+          </div>
 
-        <p class="product-intro">
-          A dish-drying rack designed to make use of the space
-          around your sink instead of taking over your counter.
-          For smaller or crowded kitchens, that can make a
-          surprisingly useful difference.
-        </p>
+          <div class="find-title">
+            The overlooked-space solution
+          </div>
 
-        <div class="product-action">
-
-          <!-- Replace the # below with your Amazon Associates link -->
-
-          <a href="#" class="amazon-link" target="_blank" rel="noopener noreferrer">
-            See it on Amazon →
-          </a>
-
-          <p class="affiliate-note">
-            As an Amazon Associate, Worthy Finds may earn from qualifying purchases.
+          <p class="find-description">
+            When your kitchen is running out of room,
+            sometimes the answer is simply looking somewhere else.
           </p>
 
+          <span class="discover">
+            Discover the find →
+          </span>
+
         </div>
 
-      </div>
+      </a>
 
 
-      <div>
+      <!-- FIND 02 -->
 
-        <div class="product-details">
+      <a href="#" class="find">
 
-          <div class="detail">
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85');">
 
-            <span class="detail-label">
-              Product
-            </span>
-
-            <span class="detail-value">
-              JASIWAY Dish Drying Rack
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Material
-            </span>
-
-            <span class="detail-value">
-              Stainless steel
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Dimensions
-            </span>
-
-            <span class="detail-value">
-              15.5" D × 11" W × 4.8" H
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Design
-            </span>
-
-            <span class="detail-value">
-              Expandable / adjustable
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Included
-            </span>
-
-            <span class="detail-value">
-              Cup & utensil holder
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Amazon ASIN
-            </span>
-
-            <span class="detail-value">
-              B0C6D6SH16
-            </span>
-
+          <div class="find-number">
+            02
           </div>
 
         </div>
 
-      </div>
+        <div class="find-info">
 
-    </article>
+          <div class="category">
+            Cooking
+          </div>
 
-  </section>
+          <div class="find-title">
+            A smarter way to prep
+          </div>
+
+          <p class="find-description">
+            Small tools that quietly make the most annoying
+            parts of cooking much easier.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
 
 
-  <!-- WHY IT'S HERE -->
+      <!-- FIND 03 -->
 
-  <section class="why">
+      <a href="#" class="find">
 
-    <div class="why-grid">
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85');">
 
-      <div class="why-label">
-        Why we found it
-      </div>
+          <div class="find-number">
+            03
+          </div>
 
-      <div class="why-content">
+        </div>
 
-        <h2>
-          Sometimes the problem
-          isn't the size of your kitchen.
-        </h2>
+        <div class="find-info">
 
-        <p>
-          It's where you're using the space.
-        </p>
+          <div class="category">
+            Storage
+          </div>
 
-        <p>
-          A traditional dish rack can occupy valuable counter
-          space. This design is made to sit over the sink,
-          creating a dedicated place for dishes while leaving
-          more of the surrounding counter available.
-        </p>
+          <div class="find-title">
+            Make the most of the space you have
+          </div>
 
-        <p>
-          We like finds that solve a specific problem without
-          asking you to completely change the way your kitchen works.
-        </p>
+          <p class="find-description">
+            Practical discoveries for crowded counters,
+            messy cabinets and kitchens that need a little help.
+          </p>
 
-      </div>
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- FIND 04 -->
+
+      <a href="#" class="find">
+
+        <div
+          class="image"
+          style="background-image: url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1200&q=85');">
+
+          <div class="find-number">
+            04
+          </div>
+
+        </div>
+
+        <div class="find-info">
+
+          <div class="category">
+            Everyday
+          </div>
+
+          <div class="find-title">
+            Things you use more than you expect
+          </div>
+
+          <p class="find-description">
+            Simple kitchen discoveries that become part
+            of your routine before you even notice.
+          </p>
+
+          <span class="discover">
+            Discover the find →
+          </span>
+
+        </div>
+
+      </a>
 
     </div>
 
-  </section>
 
+    <!-- FEATURED -->
 
-  <!-- BOTTOM STATEMENT -->
+    <section class="featured">
 
-  <section class="statement">
+      <div class="featured-image"></div>
 
-    <p>
-      Useful should also feel
-      <em>worth finding.</em>
-    </p>
+      <div class="featured-content">
 
-  </section>
+        <div class="eyebrow">
+          Worth finding
+        </div>
+
+        <h2>
+          Your kitchen
+          can work harder.
+        </h2>
+
+        <p>
+          The right little changes can make a surprisingly
+          big difference. We look for the ones actually
+          worth making.
+        </p>
+
+        <a href="#collection" class="featured-link">
+          Explore the kitchen edit →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!-- FOOTER -->
@@ -958,12 +907,10 @@
       </div>
 
       <div class="footer-links">
-
         <a href="kitchen.html">Kitchen</a>
         <a href="privacy.html">Privacy</a>
         <a href="disclosure.html">Disclosure</a>
         <a href="contact.html">Contact</a>
-
       </div>
 
     </div>
