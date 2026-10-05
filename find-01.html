@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Find 01 — Worthy Finds</title>
+  <title>JASIWAY Dish Drying Rack — Worthy Finds</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,143 +32,144 @@
       font-family: "DM Sans", sans-serif;
       line-height: 1.6;
     }
-body.dark-mode {
-  --cream: #171715;
-  --paper: #1d1d1a;
-  --ink: #f3f0e8;
-  --muted: #a7a39a;
-  --line: #35342f;
-  --dark: #11110f;
-  background: var(--cream);
-  color: var(--ink);
-}
+
+    body.dark-mode {
+      --cream: #171715;
+      --paper: #1d1d1a;
+      --ink: #f3f0e8;
+      --muted: #a7a39a;
+      --line: #35342f;
+      --dark: #11110f;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
-/* NAVIGATION */
+    /* NAVIGATION */
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 5vw;
-  background: color-mix(in srgb, var(--cream) 90%, transparent);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: color-mix(in srgb, var(--cream) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
 
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  letter-spacing: -0.5px;
-}
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
 
-.logo em {
-  font-style: italic;
-  font-weight: 400;
-}
+    .logo em {
+      font-style: italic;
+      font-weight: 400;
+    }
 
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: auto;
-  margin-right: 32px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: auto;
+      margin-right: 32px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
 
-.theme-switch span {
-  color: var(--muted);
-}
+    .theme-switch span {
+      color: var(--muted);
+    }
 
-.theme-option {
-  border: none;
-  background: transparent;
-  padding: 4px 0;
-  color: var(--ink);
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  cursor: pointer;
-  opacity: 0.45;
-  transition: opacity 0.2s ease;
-}
+    .theme-option {
+      border: none;
+      background: transparent;
+      padding: 4px 0;
+      color: var(--ink);
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      cursor: pointer;
+      opacity: 0.45;
+      transition: opacity 0.2s ease;
+    }
 
-.theme-option.active {
-  opacity: 1;
-}
+    .theme-option.active {
+      opacity: 1;
+    }
 
-.theme-option:hover {
-  opacity: 0.75;
-}
+    .theme-option:hover {
+      opacity: 0.75;
+    }
 
-.nav-links {
-  display: flex;
-  gap: 28px;
-  font-size: 13px;
-}
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+    }
 
-.nav-links a {
-  transition: opacity 0.2s ease;
-}
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
 
-.nav-links a:hover {
-  opacity: 0.55;
-}
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
 
-.category-menu {
-  position: relative;
-}
+    .category-menu {
+      position: relative;
+    }
 
-.category-menu summary {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-}
+    .category-menu summary {
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+    }
 
-.category-menu summary::-webkit-details-marker {
-  display: none;
-}
+    .category-menu summary::-webkit-details-marker {
+      display: none;
+    }
 
-.category-menu summary::after {
-  content: "▾";
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 9px;
-}
+    .category-menu summary::after {
+      content: "▾";
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 9px;
+    }
 
-.category-dropdown {
-  position: absolute;
-  top: 28px;
-  right: -15px;
-  width: 180px;
-  padding: 8px 0;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
-  z-index: 100;
-}
+    .category-dropdown {
+      position: absolute;
+      top: 28px;
+      right: -15px;
+      width: 180px;
+      padding: 8px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+      z-index: 100;
+    }
 
-.category-dropdown a {
-  display: block;
-  padding: 13px 18px;
-  color: var(--ink);
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
+    .category-dropdown a {
+      display: block;
+      padding: 13px 18px;
+      color: var(--ink);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
 
-.category-dropdown a:hover {
-  background: var(--cream);
-}
+    .category-dropdown a:hover {
+      background: var(--cream);
+    }
 
     /* PRODUCT HERO */
 
@@ -188,20 +189,56 @@ nav {
 
     .product-layout {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 70px;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 90px;
       align-items: center;
     }
 
-   .product-image {
-  min-height: 650px;
-  background-image: url("https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400");
-  background-size: cover;
-  background-position: center;
-}
+    /*
+      We are intentionally not using an Amazon product image here.
+      This visual panel gives the page structure without pretending
+      that a stock image is the JASIWAY product.
+    */
+
+    .product-visual {
+      min-height: 600px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 55px;
+      text-align: center;
+    }
+
+    .visual-inner {
+      max-width: 280px;
+    }
+
+    .visual-number {
+      font-family: "Playfair Display", serif;
+      font-size: 100px;
+      line-height: 1;
+      color: var(--line);
+      margin-bottom: 25px;
+    }
+
+    .visual-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .visual-name {
+      margin-top: 14px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      line-height: 1.2;
+    }
 
     .product-copy {
-      max-width: 520px;
+      max-width: 560px;
     }
 
     .category {
@@ -228,20 +265,15 @@ nav {
       margin-bottom: 25px;
     }
 
-   .description {
-  color: var(--muted);
-  font-size: 15px;
-  max-width: 470px;
-}
+    .description {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 470px;
+    }
 
     .price {
       margin-top: 30px;
       font-size: 15px;
-    }
-
-    .price strong {
-      font-size: 20px;
-      font-weight: 500;
     }
 
     .cta {
@@ -259,7 +291,13 @@ nav {
       opacity: 0.8;
     }
 
-    /* EDITORIAL SECTION */
+    .affiliate-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* EDITORIAL */
 
     .editorial {
       background: var(--paper);
@@ -289,12 +327,12 @@ nav {
       margin-bottom: 35px;
     }
 
-.editorial p {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 680px;
-  margin-bottom: 25px;
-}
+    .editorial p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 680px;
+      margin-bottom: 25px;
+    }
 
     /* DETAILS */
 
@@ -410,179 +448,175 @@ nav {
       font-size: 10px;
     }
 
-   /* MOBILE */
+    /* MOBILE */
 
-.mobile-menu-button {
-  display: none;
-}
+    .mobile-menu-button {
+      display: none;
+    }
 
-@media (max-width: 700px) {
+    @media (max-width: 700px) {
 
-  .mobile-menu-button {
-    display: block;
-    width: 34px;
-    height: 34px;
-    padding: 7px 4px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-  }
+      nav {
+        padding: 18px 6vw;
+      }
 
-  .mobile-menu-button span {
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--ink);
-    margin: 5px auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+      .mobile-menu-button {
+        display: block;
+        width: 34px;
+        height: 34px;
+        padding: 7px 4px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
 
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
+      .mobile-menu-button span {
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--ink);
+        margin: 5px auto;
+      }
 
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
 
-  .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
 
-  nav {
-    padding: 18px 6vw;
-  }
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
 
-  .nav-links {
-    display: flex;
-    position: fixed;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: color-mix(in srgb, var(--cream) 96%, transparent);
-    backdrop-filter: blur(18px);
-    border-top: 1px solid var(--line);
-    padding: 30px 25px 35px;
-    flex-direction: column;
-    gap: 0;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: color-mix(in srgb, var(--cream) 96%, transparent);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid var(--line);
+        padding: 30px 25px 35px;
+        flex-direction: column;
+        gap: 0;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
 
-    opacity: 0;
-    transform: translateY(-8px);
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
+      .nav-links.menu-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
 
-  .nav-links.menu-open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+      .nav-links > a,
+      .category-menu > summary {
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+      }
 
-  .nav-links > a,
-  .category-menu > summary {
-    display: block;
-    width: 100%;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    transition: padding-left 0.25s ease;
-  }
+      .category-menu {
+        width: 100%;
+      }
 
-  .nav-links > a:active,
-  .category-menu > summary:active {
-    padding-left: 6px;
-  }
+      .category-menu > summary::after {
+        float: right;
+        margin-top: 2px;
+      }
 
-  .category-menu {
-    width: 100%;
-  }
+      .category-dropdown {
+        position: static;
+        width: 100%;
+        padding: 4px 0 8px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
 
-  .category-menu > summary::after {
-    float: right;
-    margin-top: 2px;
-  }
+      .category-dropdown a {
+        padding: 12px 0 12px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
 
-  .category-dropdown {
-    position: static;
-    width: 100%;
-    padding: 4px 0 8px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-  }
+      .theme-switch {
+        margin-right: 15px;
+      }
 
-  .category-dropdown a {
-    padding: 12px 0 12px 18px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    border-bottom: none;
-  }
+      .product-hero {
+        padding: 45px 6vw 80px;
+      }
 
-  .category-dropdown a:hover {
-    background: transparent;
-  }
+      .breadcrumb {
+        margin-bottom: 30px;
+      }
 
-  .product-hero {
-    padding: 45px 6vw 80px;
-  }
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
 
-  .breadcrumb {
-    margin-bottom: 30px;
-  }
+      .product-visual {
+        min-height: 380px;
+        padding: 40px;
+      }
 
-  .product-layout {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
+      .visual-number {
+        font-size: 80px;
+      }
 
-  .product-image {
-    min-height: 430px;
-  }
+      h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+      }
 
-  h1 {
-    font-size: 55px;
-    letter-spacing: -2px;
-  }
+      .intro {
+        font-size: 20px;
+      }
 
-  .intro {
-    font-size: 20px;
-  }
+      .editorial {
+        padding: 80px 6vw;
+      }
 
-  .editorial {
-    padding: 80px 6vw;
-  }
+      .editorial h2 {
+        font-size: 42px;
+      }
 
-  .editorial h2 {
-    font-size: 42px;
-  }
+      .details {
+        padding: 75px 6vw;
+      }
 
-  .details {
-    padding: 75px 6vw;
-  }
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
 
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
+      .detail:nth-child(odd) {
+        margin-right: 0;
+      }
 
-  .detail:nth-child(odd) {
-    margin-right: 0;
-  }
+      .final-cta {
+        padding: 85px 6vw;
+      }
 
-  .final-cta {
-    padding: 85px 6vw;
-  }
+      .footer-top {
+        display: block;
+      }
 
-  .footer-top {
-    display: block;
-  }
-
-  .footer-links {
-    margin-top: 25px;
-    flex-wrap: wrap;
-  }
-}
+      .footer-links {
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+    }
   </style>
 </head>
 
@@ -590,50 +624,62 @@ nav {
 
   <!-- NAVIGATION -->
 
- <nav>
+  <nav>
 
-  <a href="index.html" class="logo">
-    Worthy <em>Finds</em>
-  </a>
+    <a href="index.html" class="logo">
+      Worthy <em>Finds</em>
+    </a>
 
-  <div class="theme-switch" aria-label="Theme switch">
-    <button type="button" class="theme-option active" data-theme="light">
-      Light
+    <div class="theme-switch" aria-label="Theme switch">
+
+      <button type="button" class="theme-option active" data-theme="light">
+        Light
+      </button>
+
+      <span>·</span>
+
+      <button type="button" class="theme-option" data-theme="dark">
+        Dark
+      </button>
+
+    </div>
+
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
     </button>
 
-    <span>·</span>
+    <div class="nav-links">
 
-    <button type="button" class="theme-option" data-theme="dark">
-      Dark
-    </button>
-  </div>
+      <a href="index.html">Finds</a>
 
-  <button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+      <details class="category-menu">
 
-  <div class="nav-links">
+        <summary>Categories</summary>
 
-    <a href="index.html">Finds</a>
+        <div class="category-dropdown">
 
-    <details class="category-menu">
-      <summary>Categories</summary>
+          <a href="kitchen.html">Kitchen 01</a>
+          <a href="home.html">Home 02</a>
+          <a href="gadgets.html">Gadgets 03</a>
+          <a href="style.html">Style 04</a>
 
-      <div class="category-dropdown">
-        <a href="kitchen.html">Kitchen 01</a>
-        <a href="home.html">Home 02</a>
-        <a href="gadgets.html">Gadgets 03</a>
-        <a href="style.html">Style 04</a>
-      </div>
-    </details>
+        </div>
 
-    <a href="story.html">Our Story</a>
+      </details>
 
-  </div>
+      <a href="story.html">Our Story</a>
 
-</nav>
+    </div>
+
+  </nav>
 
 
   <!-- PRODUCT HERO -->
@@ -646,7 +692,26 @@ nav {
 
     <div class="product-layout">
 
-      <div class="product-image"></div>
+      <div class="product-visual">
+
+        <div class="visual-inner">
+
+          <div class="visual-number">
+            001
+          </div>
+
+          <div class="visual-label">
+            Worthy Finds / Kitchen
+          </div>
+
+          <div class="visual-name">
+            JASIWAY Dish Drying Rack
+          </div>
+
+        </div>
+
+      </div>
+
 
       <div class="product-copy">
 
@@ -659,24 +724,31 @@ nav {
         </h1>
 
         <p class="intro">
-  A simple way to turn the space around your sink
-  into useful space.
-</p>
+          A simple way to turn the space around your sink
+          into useful space.
+        </p>
 
         <p class="description">
-  It keeps dishes elevated, clears valuable counter space
-  and makes better use of an area that often goes overlooked.
-</p>
+          The JASIWAY dish drying rack is designed to sit
+          over the sink, keeping dishes elevated while
+          making better use of the space around your counter.
+        </p>
 
-       <div class="price">
-  Check current price on Amazon
-</div>
-<div class="affiliate-note">
-  (paid link)
-</div>
-      <a href="https://amzn.to/47mBy3W" class="cta" target="_blank" rel="nofollow sponsored noopener">
-  See the find →
-</a>
+        <div class="price">
+          Check the current price on Amazon
+        </div>
+
+        <a
+          href="https://amzn.to/47mBy3W"
+          class="cta"
+          target="_blank"
+          rel="nofollow sponsored noopener">
+          See the find →
+        </a>
+
+        <div class="affiliate-note">
+          Paid affiliate link.
+        </div>
 
       </div>
 
@@ -692,97 +764,128 @@ nav {
     <div class="editorial-inner">
 
       <div class="section-label">
-  Why it's worth finding
-</div>
+        Why it's worth finding
+      </div>
 
-<h2>
-  A little more room,
-  without adding more room.
-</h2>
+      <h2>
+        A little more room,
+        without adding more room.
+      </h2>
 
-<p>
-  Kitchen counters have a way of filling up.
-  An over-the-sink rack makes use of the space
-  that is already there, keeping dishes elevated
-  and your counter a little clearer.
-</p>
+      <p>
+        Kitchen counters have a way of filling up.
+        An over-the-sink rack makes use of the space
+        that is already there, keeping dishes elevated
+        and your counter a little clearer.
+      </p>
 
-<p>
-  It is a small change, but one that can make
-  everyday kitchen routines feel noticeably easier.
-</p>
+      <p>
+        The JASIWAY design includes adjustable supporting
+        bars and an expandable design, along with holders
+        for cups and utensils.
+      </p>
 
-<p>
-  That's what we look for at Worthy Finds:
-  simple ideas that quietly make better use
-  of the things you already have.
-</p>
-</section>
+      <p>
+        That's what we look for at Worthy Finds:
+        useful products that solve a specific everyday
+        problem without unnecessarily complicating things.
+      </p>
+
+    </div>
+
+  </section>
+
 
   <!-- DETAILS -->
 
-<section class="details">
+  <section class="details">
 
-  <div class="section-label">
-    Before you buy
-  </div>
+    <div class="section-label">
+      Before you buy
+    </div>
 
-  <div class="details-grid">
+    <div class="details-grid">
 
-    <div class="detail">
+      <div class="detail">
 
-      <div class="detail-label">
-        Best for
+        <div class="detail-label">
+          Product
+        </div>
+
+        <div class="detail-value">
+          JASIWAY Dish Drying Rack
+        </div>
+
       </div>
 
-      <div class="detail-value">
-        Smaller or crowded kitchens
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Material
+        </div>
+
+        <div class="detail-value">
+          Stainless steel
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Size
+        </div>
+
+        <div class="detail-value">
+          15.5"D × 11"W × 4.8"H
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Design
+        </div>
+
+        <div class="detail-value">
+          Expandable / adjustable
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Included
+        </div>
+
+        <div class="detail-value">
+          Cup & utensil holder
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Amazon ASIN
+        </div>
+
+        <div class="detail-value">
+          B0C6D6SH16
+        </div>
+
       </div>
 
     </div>
 
-
-    <div class="detail">
-
-      <div class="detail-label">
-        Material
-      </div>
-
-     <div class="detail-value">
-  Stainless steel
-</div>
-
-    </div>
-
-
-    <div class="detail">
-
-      <div class="detail-label">
-        Size
-      </div>
-
-     <div class="detail-value">
-  15.5"D × 11"W × 4.8"H
-</div>
-
-    </div>
-
-
-    <div class="detail">
-
-      <div class="detail-label">
-        What we like
-      </div>
-
-     <div class="detail-value">
-  Expandable with cup & utensil holders
-</div>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
   <!-- FINAL CTA -->
@@ -794,11 +897,15 @@ nav {
     </h2>
 
     <p>
-      See the current product, available options
-      and latest price.
+      See the exact product on Amazon,
+      including its current images, options,
+      reviews and latest price.
     </p>
 
-    <a href="https://amzn.to/47mBy3W" target="_blank" rel="nofollow sponsored noopener">
+    <a
+      href="https://amzn.to/47mBy3W"
+      target="_blank"
+      rel="nofollow sponsored noopener">
       See the find →
     </a>
 
@@ -807,10 +914,12 @@ nav {
 
   <!-- DISCLOSURE -->
 
-<div class="disclosure">
-  As an Amazon Associate I earn from qualifying purchases.
-  Worthy Finds may also earn a commission when you purchase through certain links on this page. This does not affect the price you pay.
-</div>
+  <div class="disclosure">
+    As an Amazon Associate I earn from qualifying purchases.
+    Worthy Finds may also earn a commission when you purchase
+    through certain links on this page. This does not affect
+    the price you pay.
+  </div>
 
 
   <!-- FOOTER -->
@@ -824,10 +933,12 @@ nav {
       </div>
 
       <div class="footer-links">
-        <a href="find-01.html">Find 01</a>
+
+        <a href="kitchen.html">Kitchen</a>
         <a href="privacy.html">Privacy</a>
         <a href="disclosure.html">Disclosure</a>
         <a href="contact.html">Contact</a>
+
       </div>
 
     </div>
@@ -837,47 +948,84 @@ nav {
     </div>
 
   </footer>
-<script>
-  const menuButton = document.querySelector(".mobile-menu-button");
-  const navLinks = document.querySelector(".nav-links");
 
-  menuButton.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("menu-open");
-    menuButton.setAttribute("aria-expanded", isOpen);
-  });
-</script>
 
-<script>
-  const themeOptions = document.querySelectorAll(".theme-option");
+  <!-- MOBILE MENU -->
 
-  const savedTheme = localStorage.getItem("worthy-finds-theme");
+  <script>
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
+    const menuButton =
+      document.querySelector(".mobile-menu-button");
 
-  themeOptions.forEach(option => {
-    option.classList.toggle(
-      "active",
-      option.dataset.theme === (savedTheme || "light")
-    );
+    const navLinks =
+      document.querySelector(".nav-links");
 
-    option.addEventListener("click", () => {
-      const selectedTheme = option.dataset.theme;
+    menuButton.addEventListener("click", () => {
 
-      document.body.classList.toggle(
-        "dark-mode",
-        selectedTheme === "dark"
+      const isOpen =
+        navLinks.classList.toggle("menu-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
       );
 
-      localStorage.setItem("worthy-finds-theme", selectedTheme);
-
-      themeOptions.forEach(item => {
-        item.classList.toggle("active", item === option);
-      });
     });
-  });
-</script>
+
+  </script>
+
+
+  <!-- THEME SWITCH -->
+
+  <script>
+
+    const themeOptions =
+      document.querySelectorAll(".theme-option");
+
+    const savedTheme =
+      localStorage.getItem("worthy-finds-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    themeOptions.forEach(option => {
+
+      option.classList.toggle(
+        "active",
+        option.dataset.theme ===
+        (savedTheme || "light")
+      );
+
+      option.addEventListener("click", () => {
+
+        const selectedTheme =
+          option.dataset.theme;
+
+        document.body.classList.toggle(
+          "dark-mode",
+          selectedTheme === "dark"
+        );
+
+        localStorage.setItem(
+          "worthy-finds-theme",
+          selectedTheme
+        );
+
+        themeOptions.forEach(item => {
+
+          item.classList.toggle(
+            "active",
+            item === option
+          );
+
+        });
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
