@@ -326,65 +326,50 @@
 
     /* FEATURED */
 
-    .featured {
-      margin-top: 120px;
-      background: var(--dark);
-      color: white;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 600px;
-    }
-
-    .featured-image {
-  background: var(--paper);
-  border-right: 1px solid var(--line);
-  min-height: 600px;
+.featured {
+  margin-top: 120px;
+  background: var(--dark);
+  color: white;
+  min-height: 430px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 80px 6vw;
 }
 
-.featured-image::after {
-  content: "WORTHY FINDS / KITCHEN 01";
-  font-family: "DM Sans", sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted);
+.featured-content {
+  max-width: 650px;
 }
 
-    .featured-content {
-      padding: 70px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.featured-content .eyebrow {
+  color: #aaa69d;
+  margin-bottom: 25px;
+}
 
-    .featured-content .eyebrow {
-      color: #aaa69d;
-    }
+.featured-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
 
-    .featured-content h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 52px;
-      line-height: 1;
-      font-weight: 400;
-      letter-spacing: -1.5px;
-      margin-bottom: 25px;
-    }
+.featured-content p {
+  color: #bbb7af;
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 15px;
+}
 
-    .featured-content p {
-      color: #bbb7af;
-      max-width: 430px;
-      font-size: 15px;
-    }
-
-    .featured-link {
-      margin-top: 35px;
-      font-size: 12px;
-      border-bottom: 1px solid #aaa69d;
-      padding-bottom: 5px;
-      width: fit-content;
-    }
+.featured-link {
+  display: inline-block;
+  margin-top: 35px;
+  font-size: 12px;
+  border-bottom: 1px solid #aaa69d;
+  padding-bottom: 5px;
+}
 
     /* FOOTER */
 
