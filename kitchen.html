@@ -336,11 +336,21 @@
     }
 
     .featured-image {
-      background-image: url("https://images.unsplash.com/photo-1780930425732-6fe2d9de072f?auto=format&fit=crop&fm=jpg&q=85&w=1400");
-      background-size: cover;
-      background-position: center;
-      min-height: 600px;
-    }
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-image::after {
+  content: "WORTHY FINDS / KITCHEN 01";
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
 
     .featured-content {
       padding: 70px;
