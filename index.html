@@ -379,13 +379,37 @@
       overflow: hidden;
     }
 
-    .feature-image {
-      min-width: 0;
-      min-height: 600px;
-      background:
-        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=90")
-        center/cover;
-    }
+.feature-image {
+  min-width: 0;
+  min-height: 600px;
+  background: #171714;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-image::before {
+  content: "01";
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: #9a968f;
+}
+
+.feature-image::after {
+  content: "KITCHEN\A ORGANIZATION";
+  white-space: pre;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  color: #f5f2eb;
+}
 
     .feature-copy {
       min-width: 0;
